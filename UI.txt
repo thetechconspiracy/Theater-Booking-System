@@ -38,3 +38,21 @@ REVIEWS:
 If there are less than 22 options, the Back option will be directly after the last option. 
 More takes the user to the next page
 There are 22 options due to the CLI interface.  The standard view is 80 columns by 24 rows, so 22 options allows for a header as well as the command bar at the bottom of the screen
+
+
+PURCHASE TICKETS
+Shows a list of theaters similar to the now playing screen.
+Selecting a theater brings up a screen similar to the event view, listing the special features of the theater.
+Menu Options for Theater View:
+1. Reviews
+2. Nearby Resturaunts
+3. Confirm purchase
+
+
+
+
+ACCOUNT SETTINGS
+1. Sign in/out
+
+REQUEST A REFUND
+Shows a list of events the user is eligible for a refund for
