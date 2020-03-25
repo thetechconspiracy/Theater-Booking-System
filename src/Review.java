@@ -2,6 +2,7 @@
  * Written by Something Creative
  * Description
  */
+package PACKAGE_NAME;
 
-public class Time {
+public class Review {
 }
