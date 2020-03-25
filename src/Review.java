@@ -46,7 +46,7 @@ public class Review {
     } catch (Exception NumberFormatException) {
       return;
     }
-
+//testr
     if (ratingInt > 5 || ratingInt < 1) { return; }
 
     this.title = title;
