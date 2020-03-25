@@ -1,0 +1,40 @@
+MAIN MENU
+1. See list of shows playing
+2. Account Settings
+3. Request a refund
+4. Exit
+
+SEE LIST OF SHOWS PLAYING
+1. Movies
+2. Plays
+3. Concerts
+4. Show All
+5. Back
+
+NOW PLAYING
+1. Movie 1
+2. Movie 2
+...
+22. More...
+If there are less than 22 options, the Back option will be directly after the last option. 
+More takes the user to the next page
+There are 22 options due to the CLI interface.  The standard view is 80 columns by 24 rows, so 22 options allows for a header as well as the command bar at the bottom of the screen
+
+EVENT VIEW
+Movie 1
+Description: lorem ipsum dolor sit amet
+MPAA: G
+Rating: 3.5/5
+
+1. Read reviews
+2. Purchase tickets
+3. Back
+
+REVIEWS:
+1. Title                                      5/5
+2. Title                                      3/5
+...
+22. More
+If there are less than 22 options, the Back option will be directly after the last option. 
+More takes the user to the next page
+There are 22 options due to the CLI interface.  The standard view is 80 columns by 24 rows, so 22 options allows for a header as well as the command bar at the bottom of the screen
