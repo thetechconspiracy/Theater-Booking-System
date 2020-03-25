@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="10d3af81-693c-4226-af23-4af8a16cb835" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Actor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Band.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Director.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieTheater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Performer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Seat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Theater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Time.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Venue.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Zcn1E0x8oBNsyHmpixk4AABkqT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10d3af81-693c-4226-af23-4af8a16cb835" name="Default Changelist" comment="" />
+      <created>1585147032479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585147032479</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="872" y="351" key="#Project_Structure" timestamp="1585147250139">
+      <screen x="0" y="0" width="2560" height="1379" />
+    </state>
+    <state x="872" y="351" key="#Project_Structure/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585147250139" />
+    <state x="783" y="335" key="SettingsEditor" timestamp="1585147362621">
+      <screen x="0" y="0" width="2560" height="1379" />
+    </state>
+    <state x="783" y="335" key="SettingsEditor/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585147362621" />
+  </component>
+</project>
