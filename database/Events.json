@@ -23,7 +23,8 @@
   },{
     "type": "concert",
     "title": "New York Symphony Orchestra Presents Movie Soundtracks",
+    "rating": "None",
     "des": "The NYSO plays 20 of the most well known tracks in cinema",
-    "band": "New York Symphony Orchestra"
+    "cast": "New York Symphony Orchestra"
   }
 ]}
