@@ -25,6 +25,12 @@ public class Play {
     this.setPlaywright(playwright);
     this.setCast(cast);
   }
+
+  public String toString(){
+    return title + des + rating;
+  }
+
+
   public String getTitle() {
     return title;
   }

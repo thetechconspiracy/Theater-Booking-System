@@ -23,6 +23,10 @@ public class Movie {
     this.setMainCast(cast);
   }
 
+  public String toString(){
+    return title + des + rating;
+  }
+
   public String getTitle() {
     return title;
   }

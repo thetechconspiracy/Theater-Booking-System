@@ -9,4 +9,6 @@ import java.time.*;
 public interface Event {
   public LocalDateTime[] getShowtimes();
   public boolean addReview(Review review);
+
+  public String toString();
 }

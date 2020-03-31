@@ -9,7 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InvalidObjectException;
 import java.util.ArrayList;
-import org.json.simple.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 
@@ -25,7 +26,9 @@ public class LoadEventDatabase {
     try{
       FileReader reader = new FileReader("database/Events.json");
       JSONParser parser = new JSONParser();
-      JSONArray eventsJSON = (JSONArray)new JSONParser().parse(reader);
+      //JSONArray eventsJSON = (JSONArray)new JSONParser().parse(reader);
+      JSONArray eventsJSON = new JSONArray();
+      eventsJSON.add(parser.parse(reader));
 
       for(int i = 0; i < eventsJSON.size(); i++){
         JSONObject eventJSON = (JSONObject)eventsJSON.get(i);

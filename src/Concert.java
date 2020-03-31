@@ -22,6 +22,9 @@ public class Concert {
     this.band = band;
   }
 
+  public String toString(){
+    return title + des + rating;
+  }
 
   public String getBand() {
     return band;
