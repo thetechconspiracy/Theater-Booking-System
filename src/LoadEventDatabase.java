@@ -26,9 +26,9 @@ public class LoadEventDatabase {
     try{
       FileReader reader = new FileReader("database/Events.json");
       JSONParser parser = new JSONParser();
-      //JSONArray eventsJSON = (JSONArray)new JSONParser().parse(reader);
-      JSONArray eventsJSON = new JSONArray();
-      eventsJSON.add(parser.parse(reader));
+      JSONArray eventsJSON = (JSONArray)parser.parse(reader);
+      //JSONArray eventsJSON = new JSONArray();
+      //eventsJSON.add(parser.parse(reader));
 
       for(int i = 0; i < eventsJSON.size(); i++){
         JSONObject eventJSON = (JSONObject)eventsJSON.get(i);
@@ -40,14 +40,20 @@ public class LoadEventDatabase {
         switch(type){
           case "movie":
             String director = (String)eventJSON.get("director");
+            Movie movie = new Movie(title, des, rating, director, cast);
+            events.add(movie);
             //TODO: Export to movie
             break;
           case "play":
             String playwright = (String)eventJSON.get("playwright");
+            Play play = new Play(title, des, rating, playwright, cast);
+            events.add(play);
             //TODO: Export to play
             break;
           case "concert":
             //TODO: Export to concert
+            Concert concert = new Concert(title, des, rating, cast);
+            events.add(concert);
             break;
           default:
             //Type is invalid.  Panic.

@@ -6,11 +6,11 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Play {
+public class Play implements Event{
 
   private String title;
   private String des;
-  private LocalDateTime showtimes;
+  private LocalDateTime[] showtimes;
   private ArrayList<Review> reviews;
   private String rating;
 
@@ -47,11 +47,16 @@ public class Play {
     this.des = des;
   }
 
-  public LocalDateTime getShowtimes() {
+  public LocalDateTime[] getShowtimes() {
     return showtimes;
   }
 
-  public void setShowtimes(LocalDateTime showtimes) {
+  @Override
+  public boolean addReview(Review review) {
+    return false;
+  }
+
+  public void setShowtimes(LocalDateTime[] showtimes) {
     this.showtimes = showtimes;
   }
 

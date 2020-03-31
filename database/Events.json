@@ -1,4 +1,4 @@
-{"events": [
+[
   {
     "type": "movie",
     "title": "Frozen 2",
@@ -27,4 +27,4 @@
     "des": "The NYSO plays 20 of the most well known tracks in cinema",
     "cast": "New York Symphony Orchestra"
   }
-]}
+]
