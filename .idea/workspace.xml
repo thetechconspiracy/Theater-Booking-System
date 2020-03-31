@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10d3af81-693c-4226-af23-4af8a16cb835" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/Events.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/Review.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Concert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Play.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +43,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thete\247\theater-booking-system\Database" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />

@@ -1,0 +1,18 @@
+{"reviews": [
+  {
+    "event": "Frozen 2",
+    "rating": 3,
+    "title": "Another Frozen Movie",
+    "contents": "If you liked Frozen 1, you will like this one."
+  },{
+    "event": "The Jungle Book",
+    "rating": 5,
+    "title": "An excellent reimagining",
+    "contents": ""
+  },{
+    "event": "Frozen 2",
+    "rating": 1,
+    "title": "Let it Go",
+    "contents": "That song is still stuck in my head from the first one.  Now I have to deal with ads for a SECOND one?"
+  }
+]}
