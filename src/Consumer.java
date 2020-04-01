@@ -26,11 +26,25 @@ public class Consumer implements User {
 		
 	}
 	
-	/*
+	/**
+	 * 
+	 * @param movie, movie to have a review for
+	 * this method adds a review to a movie
+	 */
 	public void rateMovie(Movie movie) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Enter a title for your review:");
+		String title = keyboard.nextLine();
+		System.out.println("Enter a comment for your review:");
+		String comment = keyboard.nextLine();
+		System.out.println("Enter a number of stars out of 5:");
+		int rating = keyboard.nextInt();
+		
+		movie.addReview(new Review(title, comment, rating));
+		
 		
 	}
-	*/
+	
 	
 	/**
 	 * logs the user out of the system

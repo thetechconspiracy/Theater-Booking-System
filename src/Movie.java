@@ -45,7 +45,8 @@ public class Movie implements Event{
 
   @Override
   public boolean addReview(Review review) {
-    return false;
+	  this.reviews.add(review);
+	  return true;
   }
 
   public void setShowtimes(LocalDateTime[] showtimes) {
