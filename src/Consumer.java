@@ -23,6 +23,18 @@ public class Consumer implements User {
 	 * 
 	 */
 	public void printTicket() {
+		Scanner keyboard = new Scanner(System.in);
+		
+		for(Ticket t : this.tickets) {
+			if(t != null) {
+				System.out.println(""+t.getEvent().getTitle());
+				System.out.println("Would you like to print this ticket? Y/N");
+				String answer = keyboard.nextLine();
+				if(answer.equals("Y")) {
+					t.printTicket();
+				}
+			}
+		}
 		
 	}
 	
