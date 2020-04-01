@@ -13,5 +13,7 @@ public class Main {
     for(Event event : events){
       System.out.println(event);
     }
+
+    SaveEventDatabase.saveDatabase(events);
   }
 }

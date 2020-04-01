@@ -115,4 +115,7 @@ public class Play implements Event{
     //TODO: convert cast to String
     return "<Main cast goes here>";
   }
+  public String getPlaywrightString(){
+    return "<director>";
+  }
 }

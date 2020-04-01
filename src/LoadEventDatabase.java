@@ -42,16 +42,13 @@ public class LoadEventDatabase {
             String director = (String)eventJSON.get("director");
             Movie movie = new Movie(title, des, rating, director, cast);
             events.add(movie);
-            //TODO: Export to movie
             break;
           case "play":
             String playwright = (String)eventJSON.get("playwright");
             Play play = new Play(title, des, rating, playwright, cast);
             events.add(play);
-            //TODO: Export to play
             break;
           case "concert":
-            //TODO: Export to concert
             Concert concert = new Concert(title, des, rating, cast);
             events.add(concert);
             break;

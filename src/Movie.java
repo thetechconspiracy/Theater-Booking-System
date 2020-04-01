@@ -113,4 +113,8 @@ public class Movie implements Event{
     //TODO: convert cast to String
     return "<Main cast goes here>";
   }
+
+  public String getDirectorString(){
+    return "<director>";
+  }
 }
