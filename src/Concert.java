@@ -79,4 +79,20 @@ public class Concert implements Event{
   public void setRating(String rating) {
     this.rating = rating;
   }
+
+
+  /**
+   * Used for converting to JSON
+   * @return: "concert"
+   */
+  public String getType(){ return "concert"; }
+
+  /**
+   * Returns cast as a String.  Used for JSON
+   * @return cast in a comma separated string
+   */
+  public String getCastString() {
+    //TODO: convert cast to String
+    return "<Main cast goes here>";
+  }
 }

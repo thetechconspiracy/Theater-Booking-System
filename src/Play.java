@@ -100,4 +100,19 @@ public class Play implements Event{
     ;
     //TODO: Convert to cast
   }
+
+  /**
+   * Used for converting to JSON
+   * @return: "play"
+   */
+  public String getType(){ return "play"; }
+
+  /**
+   * Returns cast as a String.  Used for JSON
+   * @return cast in a comma separated string
+   */
+  public String getCastString() {
+    //TODO: convert cast to String
+    return "<Main cast goes here>";
+  }
 }

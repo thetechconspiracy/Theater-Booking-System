@@ -3,6 +3,7 @@
  * Description
  */
 
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -96,5 +97,20 @@ public class Movie implements Event{
 
   public void setTitle(String title) {
     this.title = title;
+  }
+
+  /**
+   * Used for converting to JSON
+   * @return: "movie"
+   */
+  public String getType(){ return "movie"; }
+
+  /**
+   * Returns cast as a String.  Used for JSON
+   * @return cast in a comma separated string
+   */
+  public String getCastString() {
+    //TODO: convert cast to String
+    return "<Main cast goes here>";
   }
 }
