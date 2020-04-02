@@ -25,7 +25,7 @@ public class LoadVenueDatabase {
         //If a Theater in a Movie theater, push to a stack.  They will be handled later
         if(((String)venueJSON.get("type")).equals("movieChild")) {
           String type = (String)venueJSON.get("type");
-          int number = (int)venueJSON.get("number");
+          String number = (String)venueJSON.get("number");
           int parent = (int)venueJSON.get("parent");
           String seating = (String)venueJSON.get("seating");
           String tier5 = (String)venueJSON.get("tier5");
@@ -33,7 +33,7 @@ public class LoadVenueDatabase {
           String tier3 = (String)venueJSON.get("tier3");
           String tier2 = (String)venueJSON.get("tier2");
 
-
+          childTheaters.push(new Theater(number, seating, parent));
 
           continue;
         }
