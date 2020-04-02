@@ -21,6 +21,7 @@ public class Concert implements Event{
     this.rating = rating;
     this.band = band;
   }
+  
 
   public String toString(){
     return title + des + rating;

@@ -20,7 +20,7 @@ public class Consumer implements User {
 	*/
 	
 	/**
-	 * 
+	 * this method allows the user to print a ticket
 	 */
 	public void printTicket() {
 		Scanner keyboard = new Scanner(System.in);

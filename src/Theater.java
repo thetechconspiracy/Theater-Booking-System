@@ -194,6 +194,7 @@ public class Theater implements Venue {
    */
   @Override
   public void addEvent(Event event) {
+	  this.events.add(event);
 
   }
 
