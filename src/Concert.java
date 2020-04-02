@@ -10,7 +10,7 @@ public class Concert implements Event{
 
   private String title;
   private String des;
-  private LocalDateTime[] showtimes;
+  private LocalDateTime showtime;
   private ArrayList<Review> reviews;
   private String rating;
   private String band;
@@ -51,8 +51,8 @@ public class Concert implements Event{
     this.des = des;
   }
 
-  public LocalDateTime[] getShowtimes() {
-    return showtimes;
+  public LocalDateTime getShowtime() {
+    return showtime;
   }
 
   @Override
@@ -60,8 +60,8 @@ public class Concert implements Event{
     return false;
   }
 
-  public void setShowtimes(LocalDateTime[] showtimes) {
-    this.showtimes = showtimes;
+  public void setShowtime(LocalDateTime showtime) {
+    this.showtime = showtime;
   }
 
   public ArrayList<Review> getReviews() {

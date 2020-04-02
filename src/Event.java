@@ -7,7 +7,7 @@
 import java.time.LocalDateTime;
 
 public interface Event {
-  public LocalDateTime[] getShowtimes();
+  public LocalDateTime getShowtime();
   public boolean addReview(Review review);
   public String getType();
   public String toString();

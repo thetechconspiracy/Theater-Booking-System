@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Movie implements Event{
   private String title;
   private String des;
-  private LocalDateTime[] showtimes;
+  private LocalDateTime showtime;
   private ArrayList<Review> reviews;
   private String rating;
   private Director director;
@@ -40,8 +40,8 @@ public class Movie implements Event{
     this.des = des;
   }
 
-  public LocalDateTime[] getShowtimes() {
-    return showtimes;
+  public LocalDateTime getShowtime() {
+    return showtime;
   }
 
   @Override
@@ -50,8 +50,8 @@ public class Movie implements Event{
 	  return true;
   }
 
-  public void setShowtimes(LocalDateTime[] showtimes) {
-    this.showtimes = showtimes;
+  public void setShowtime(LocalDateTime showtimes) {
+    this.showtime = showtimes;
   }
 
   public ArrayList<Review> getReviews() {

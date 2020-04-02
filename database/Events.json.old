@@ -5,7 +5,20 @@
     "des": "",
     "rating": "PG",
     "director": "Jennifer Lee, Chris Buck",
-    "cast": "<add cast members>"
+    "cast": "<add cast members>",
+    "showtime": "4/10/2020 12:00",
+    "location": 5,
+    "theater": 1
+  },{
+    "type": "movie",
+    "title": "Frozen 2",
+    "des": "",
+    "rating": "PG",
+    "director": "Jennifer Lee, Chris Buck",
+    "cast": "<add cast members>",
+    "showtime": "4/10/2020 16:00",
+    "location": 5,
+    "theater": 2
   },{
     "type": "movie",
     "title": "The Jungle Book",
@@ -13,6 +26,9 @@
     "rating": "G",
     "director": "Jon Favreau",
     "cast": "<add cast members>"
+    "showtime": "4/12/2020 00:00",
+    "location": 5,
+    "theater": 3
   },{
     "type": "play",
     "title": "Frozen Junior 2",
@@ -20,11 +36,15 @@
     "rating": "3+",
     "playwright": "Jennifer Lee",
     "cast": "<add cast members>"
+    "showtime": "4/12/2020 00:00",
+    "location": 2
   },{
     "type": "concert",
     "title": "New York Symphony Orchestra Presents Movie Soundtracks",
     "rating": "None",
     "des": "The NYSO plays 20 of the most well known tracks in cinema",
     "cast": "New York Symphony Orchestra"
+    "showtime": "4/15/2020 20:00"
+    "location": 5
   }
 ]

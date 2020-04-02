@@ -2,9 +2,11 @@
   {
   "type": "movieTheater",
   "name": "Theater",
+  "address": "1 Movie Ct.",
   "restaurant": "Rest. 1, Rest. 2, Rest. 3",
   "theaters": 3,
-  "child": 1
+  "child": 1,
+  "location": 5
  },{
   "type": "movieChild",
   "number": 1,
@@ -35,15 +37,19 @@
 },{
   "type": "theater",
   "name": "Plays R Us",
+  "address": "123 Play Road",
   "restaurant": "Rest. 2, Rest. 4",
   "seating": "7*31!        3333 HHHH 3333         \t222 3333 3333 3333 222     222 222 2222 2222 2222 2222 222222 222 2222 2222 2222 2222 222111 111 1111 1111 1111 1111 111111 111 1111 1111 1111 1111 111111 111 1111 1111 1111 1111 111",
   "tier5": "N/A",
   "tier4": "N/A",
   "tier3": "Heated Seats, Reclining",
-  "tier2": "Heated Seats"
+  "tier2": "Heated Seats",
+  "location": 2
 },{
   "type": "stage",
   "name": "A large open field",
-  "restaurant": "Rest. 8"
+  "address": "1024 Nowhere Blvd.",
+  "restaurant": "Rest. 8",
+  "location": 99
 }
 ]
