@@ -56,6 +56,12 @@ public interface Venue {
    */
   public ArrayList<Review> getReviews();
 
+  /**
+   * Get the type of venue.  Used for JSON export
+   * @return: A string of the venue type
+   */
+  public String getType();
+
 
 
 }

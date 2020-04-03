@@ -26,4 +26,8 @@ public class Seat {
   public void setOccupied(boolean occupied){
     this.occupied = occupied;
   }
+
+  public String toString(){
+    return Integer.toString(tier);
+  }
 }

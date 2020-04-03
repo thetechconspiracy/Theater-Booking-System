@@ -15,5 +15,16 @@ public class Main {
     }
 
     SaveEventDatabase.saveDatabase(events);
+
+    ArrayList<Venue> venues = LoadVenueDatabase.loadDatabase();
+
+    for(Venue venue : venues){
+      if(venue.getType().equals("movieChild") || venue.getType().equals("theater")){
+        Theater theater = (Theater)venue;
+        theater.printSeatingChart();
+        System.exit(0);
+      }
+
+    }
   }
 }

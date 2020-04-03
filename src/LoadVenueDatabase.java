@@ -25,13 +25,15 @@ public class LoadVenueDatabase {
         //If a Theater in a Movie theater, push to a stack.  They will be handled later
         if(((String)venueJSON.get("type")).equals("movieChild")) {
           String type = (String)venueJSON.get("type");
-          String number = (String)venueJSON.get("number");
-          int parent = (int)venueJSON.get("parent");
+          long numberLong = (long)venueJSON.get("number");
+          long parent = (long)venueJSON.get("parent");
           String seating = (String)venueJSON.get("seating");
           String tier5 = (String)venueJSON.get("tier5");
           String tier4 = (String)venueJSON.get("tier4");
           String tier3 = (String)venueJSON.get("tier3");
           String tier2 = (String)venueJSON.get("tier2");
+
+          String number = Long.toString(numberLong);
 
           childTheaters.push(new Theater(number, seating, parent));
 
@@ -42,6 +44,14 @@ public class LoadVenueDatabase {
         String restaurant = (String)venueJSON.get("restaurant");
 
       }
+
+
+      //TEMP CODE
+      //TODO: Remove and do this properly
+      if(!childTheaters.empty())
+        venues.add(childTheaters.pop());
+
+      return venues;
 
     }catch(Exception e){
       e.printStackTrace();

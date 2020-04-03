@@ -13,7 +13,7 @@ public class Theater implements Venue {
   private String restaurants;
 
   //Used if the Theater is a child of a MovieTheater
-  private int parent;
+  private long parent;
 
   /**
    * Prepares the Theater upon creation
@@ -31,9 +31,7 @@ public class Theater implements Venue {
     this.events = events;
     this.reviews = reviews;
     this.restaurants = restaurants;
-    this.events = events;
-    this.reviews = reviews;
-    this.restaurants = restaurants;
+    this.parent = -1; //Not a child
 
     this.seats = stringToSeats(seating);
   }
@@ -43,7 +41,7 @@ public class Theater implements Venue {
    * @param number
    * @param seating
    */
-  public Theater(String number, String seating, int parent){
+  public Theater(String number, String seating, long parent){
     this.address = number;
     this.seats = stringToSeats(seating);
     this.parent = parent;
@@ -119,7 +117,7 @@ public class Theater implements Venue {
       }
 
       trackerY++;
-      if(trackerY > columns){//Reached the end of the row, move on to the next one
+      if(trackerY >= columns){//Reached the end of the row, move on to the next one
         trackerY = 0;
         trackerX++;
       }
@@ -205,5 +203,47 @@ public class Theater implements Venue {
   @Override
   public ArrayList<Review> getReviews() {
     return reviews;
+  }
+
+  public void printSeatingChart(){
+    for(int i = 0; i < seats.length; ++i){
+      //Print header
+      if(i < 10)
+        System.out.print(i);
+      else if(i < 36)//Use lowercase letters
+        System.out.print((char)(i + 87));
+      else if(i < 62)//Use uppercase letters
+        System.out.print((char)(i + 29));
+
+      System.out.print(" ");
+    }
+    System.out.println();
+    for(int i = 0; i < seats.length; ++i){
+      //Print header
+      if(i < 10)
+        System.out.print(i);
+      else if(i < 36)//Use lowercase letters
+        System.out.print((char)(i + 87));
+      else if(i < 62)//Use uppercase letters
+        System.out.print((char)(i + 29));
+
+      System.out.print(" ");
+      for(int j = 0; j < seats[0].length; ++i){
+        if (seats[i][j] == null) {
+          System.out.print("  ");
+          continue;
+        }
+        System.out.print(seats[i][j]);
+        System.out.print(" ");
+      }
+      System.out.println();
+    }
+  }
+
+  @Override
+  public String getType() {
+    if(parent == -1)
+      return "theater";
+    else return "movieChild";
   }
 }
