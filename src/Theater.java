@@ -207,7 +207,7 @@ public class Theater implements Venue {
   }
 
   public void printSeatingChart(){
-    for(int i = 0; i < seats.length; ++i){
+    for(int i = 0; i < seats[0].length + 1; ++i){ //This should be fine
       //Print header
       if(i < 10)
         System.out.print(i);
@@ -222,14 +222,14 @@ public class Theater implements Venue {
     for(int i = 0; i < seats.length; ++i){
       //Print header
       if(i < 10)
-        System.out.print(i);
+        System.out.print(i + 1);
       else if(i < 36)//Use lowercase letters
         System.out.print((char)(i + 87));
       else if(i < 62)//Use uppercase letters
         System.out.print((char)(i + 29));
 
       System.out.print(" ");
-      for(int j = 0; j < seats[0].length; ++i){
+      for(int j = 0; j < seats[i].length; ++j){
         if (seats[i][j] == null) {
           System.out.print("  ");
           continue;

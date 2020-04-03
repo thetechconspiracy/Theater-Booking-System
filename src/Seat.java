@@ -28,6 +28,10 @@ public class Seat {
   }
 
   public String toString(){
+    if(this.isOccupied())
+      return ("0");
+    else if(this.getTier() == 0)
+      return ("H");
     return Integer.toString(tier);
   }
 }
