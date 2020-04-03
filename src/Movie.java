@@ -23,6 +23,19 @@ public class Movie implements Event{
     this.setDirector(director);
     this.setMainCast(cast);
   }
+  
+  /**
+   * 
+   * @param title
+   * @param des
+   * @param rating
+   * This method is for a manager adding a movie to the venue
+   */
+  public Movie(String title, String des, String rating) {
+	  this.title = title;
+	  this.des = des;
+	  this.rating = rating;
+  }
 
   public String toString(){
     return title + des + rating;

@@ -25,6 +25,19 @@ public class Play implements Event{
     this.setPlaywright(playwright);
     this.setCast(cast);
   }
+  
+  /**
+   * 
+   * @param title
+   * @param des
+   * @param rating
+   * this method is for a manager adding a play
+   */
+  public Play(String title, String des, String rating) {
+	  this.title = title;
+	  this.des = des;
+	  this.rating = rating;
+  }
 
   public String toString(){
     return title + des + rating;
