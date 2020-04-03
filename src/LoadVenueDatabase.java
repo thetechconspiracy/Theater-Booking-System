@@ -13,8 +13,10 @@ import org.json.simple.parser.JSONParser;
 public class LoadVenueDatabase {
   public static ArrayList<Venue> loadDatabase(){
     ArrayList<Venue> venues = new ArrayList<>();
-    Stack<Theater> childTheaters = new Stack<>();
 
+
+    Stack<Theater> childTheaters = new Stack<>();
+    ArrayList<MovieTheater> movieTheaters = new ArrayList<>();
     try{
       FileReader reader = new FileReader("database/Venue.json");
       JSONParser parser = new JSONParser();
@@ -35,21 +37,59 @@ public class LoadVenueDatabase {
 
           String number = Long.toString(numberLong);
 
-          childTheaters.push(new Theater(number, seating, parent));
+          childTheaters.push(new Theater(number, seating, parent, tier2, tier3, tier4, tier5));
 
           continue;
         }
         String type = (String)venueJSON.get("type");
+        String address = (String)venueJSON.get("address");
         String name = (String)venueJSON.get("name");
         String restaurant = (String)venueJSON.get("restaurant");
+        long location = (long)venueJSON.get("location");//ID
+        switch(type){
+          case "movieTheater":
+            long theaters = (long)venueJSON.get("theaters");
+            long child = (long)venueJSON.get("child");
+            movieTheaters.add(new MovieTheater(name, address, restaurant, child, location));
+            break;
+          case "theater":
+            String seating = (String)venueJSON.get("seating");
+            String tier5 = (String)venueJSON.get("tier5");
+            String tier4 = (String)venueJSON.get("tier4");
+            String tier3 = (String)venueJSON.get("tier3");
+            String tier2 = (String)venueJSON.get("tier2");
 
+            venues.add(new Theater(name, address, seating, restaurant, tier2, tier3, tier4, tier5, location));
+            break;
+          case "stage":
+            venues.add(new Stage(name, address, restaurant, location));
+            break;
+        }
+
+        while(!childTheaters.empty()){
+          Theater child = childTheaters.pop();
+          if(child == null)
+            break;
+          //Find parent
+          for(MovieTheater theater : movieTheaters){
+            long id = theater.getChildID();
+            if (id == child.getParent()) {
+              if(child == null)
+                break;
+              theater.addTheater(child);
+              break;
+            }
+          }
+        }
+
+        //Finally, add the movie theaters to the venues AL
+        for(MovieTheater theater : movieTheaters){
+          venues.add(theater);
+        }
       }
 
 
-      //TEMP CODE
-      //TODO: Remove and do this properly
-      if(!childTheaters.empty())
-        venues.add(childTheaters.pop());
+
 
       return venues;
 

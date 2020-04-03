@@ -11,7 +11,10 @@ public class Theater implements Venue {
   private ArrayList<Event> events;
   private ArrayList<Review> reviews;
   private String restaurants;
+  private String name;
+  private long location;
 
+  private String tier2, tier3, tier4, tier5;
   //Used if the Theater is a child of a MovieTheater
   private long parent;
 
@@ -25,8 +28,9 @@ public class Theater implements Venue {
     restaurants = "";
     parent = -1;
   }
-  public Theater(String address, String seating, ArrayList<Event> events, ArrayList<Review> reviews, String restaurants){
+  public Theater(String name, String address, String seating, String restaurants, String tier2, String tier3, String tier4, String tier5, long location){
     //No validation necessary, these are either Strings designed to be printed or pre-verified data structures
+    this.name = name;
     this.address = address;
     this.events = events;
     this.reviews = reviews;
@@ -34,6 +38,12 @@ public class Theater implements Venue {
     this.parent = -1; //Not a child
 
     this.seats = stringToSeats(seating);
+
+    this.tier2 = tier2;
+    this.tier3 = tier3;
+    this.tier4 = tier4;
+    this.tier5 = tier5;
+    this.location = location;
   }
 
   /**
@@ -41,10 +51,15 @@ public class Theater implements Venue {
    * @param number
    * @param seating
    */
-  public Theater(String number, String seating, long parent){
+  public Theater(String number, String seating, long parent, String tier2, String tier3, String tier4, String tier5){
     this.address = number;
     this.seats = stringToSeats(seating);
     this.parent = parent;
+
+    this.tier2 = tier2;
+    this.tier3 = tier3;
+    this.tier4 = tier4;
+    this.tier5 = tier5;
   }
 
   private Seat[][] stringToSeats(String seating){
@@ -246,5 +261,9 @@ public class Theater implements Venue {
     if(parent == -1)
       return "theater";
     else return "movieChild";
+  }
+
+  public long getParent(){
+    return this.parent;
   }
 }

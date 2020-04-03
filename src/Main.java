@@ -19,9 +19,12 @@ public class Main {
     ArrayList<Venue> venues = LoadVenueDatabase.loadDatabase();
 
     for(Venue venue : venues){
-      if(venue.getType().equals("movieChild") || venue.getType().equals("theater")){
-        Theater theater = (Theater)venue;
-        theater.printSeatingChart();
+      if(venue.getType().equals("movieTheater")){
+        MovieTheater movie = (MovieTheater)venue;
+        ArrayList<Theater> children= movie.getTheaters();
+
+        for(Theater theater : children)
+          theater.printSeatingChart();
         System.exit(0);
       }
 

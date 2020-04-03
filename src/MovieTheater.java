@@ -10,21 +10,35 @@ public class MovieTheater implements Venue {
   private ArrayList<Event> events;
   private ArrayList<Review> reviews;
   private String restaurants;
+  private String name;
+  private long location;
 
   private ArrayList<Theater> theaters;
 
-  public MovieTheater(String address, ArrayList<Event> events, ArrayList<Review> reviews, String restaurants){
+  private long childID;
+
+  public MovieTheater(String name, String address, String restaurants, long child, long location){
+    this.name = name;
     this.address = address;
-    this.events = events;
-    this.reviews = reviews;
     this.restaurants = restaurants;
+
+    this.childID = child;
+    this.location = location;
+
+    this.theaters = new ArrayList<Theater>();
+    this.reviews = new ArrayList<>();
+    this.events = new ArrayList<>();
   }
 
   public boolean addTheater(Theater theater){
+    if(theater == null)
+      return false;
     return this.theaters.add(theater);
   }
 
-
+  public long getChildID(){
+    return this.childID;
+  }
   /**
    * Adds a review to the venue
    *
@@ -107,6 +121,9 @@ public class MovieTheater implements Venue {
   }
   public String getType(){
     return "movieTheater";
+  }
+  public ArrayList<Theater> getTheaters(){
+    return this.theaters;
   }
 
 }

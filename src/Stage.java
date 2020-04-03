@@ -10,11 +10,13 @@ public class Stage implements Venue{
   private ArrayList<Event> events;
   private ArrayList<Review> reviews;
   private String restaurants;
+  private String name;
+  private long location;
 
-  public Stage(String address, ArrayList<Event> events, ArrayList<Review> reviews, String restaurants){
+  public Stage(String name, String address, String restaurants, long location){
+    this.name = name;
     this.address = address;
-    this.events = events;
-    this.reviews = reviews;
+    this.location = location;
     this.restaurants = restaurants;
   }
 
