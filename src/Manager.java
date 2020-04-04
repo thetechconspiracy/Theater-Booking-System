@@ -11,7 +11,21 @@ public class Manager implements User {
 	private String name;
 	private int priority;
 	private String userName;
-	private HashMap password;
+	private String password;
+	
+	/**
+	 * 
+	 * @param name
+	 * @param userName
+	 * @param password
+	 * 
+	 * constructor for a manager
+	 */
+	public Manager(String name, String userName, String password) {
+		this.name = name;
+		this.userName = userName;
+		this.password = password;
+	}
 	
 	/**
 	 * adds an event to a venue

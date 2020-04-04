@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Main {
   public static void main(String[] args){
+	  /*
     ArrayList<Event> events = LoadEventDatabase.loadDatabase();
 
 
@@ -29,5 +30,9 @@ public class Main {
       }
 
     }
+    */
+	  theaterBookingSystem theaterBookingSystem = new theaterBookingSystem();
+	  theaterBookingSystem.run();
   }
+  
 }
