@@ -10,8 +10,23 @@ public class Consumer implements User {
 	private String name;
 	private int priority;
 	private String userName;
-	private HashMap password;
+	private String password;
 	private Ticket[] tickets;
+	
+	/**
+	 * 
+	 * @param name
+	 * @param userName
+	 * @param password
+	 * 
+	 * constructor method for a consumer
+	 */
+	public Consumer(String name, String userName, String password) {
+		this.name = name;
+		this.userName = userName;
+		this.password = password;
+		this.tickets = new Ticket[100];
+	}
 	
 	/*
 	public void purchaseTicket(Movie movie) {
