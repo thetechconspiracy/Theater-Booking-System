@@ -26,6 +26,8 @@ public class theaterBookingSystem {
 	    }
 	    
 	    Theater theater = new Theater("Test 1", events);
+	    theater.setSeatingChart(new seatingChart(10, 10));
+	    theater.getSeatingChart().printChart();
 	    theater.printEvents();
 	    User[] users = userArray();
 	    login(users, theater);

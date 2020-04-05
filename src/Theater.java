@@ -13,6 +13,8 @@ public class Theater implements Venue {
   private String restaurants;
   private String name;
   private long location;
+  
+  private seatingChart seatingChart;
 
   private String tier2, tier3, tier4, tier5;
   //Used if the Theater is a child of a MovieTheater
@@ -292,5 +294,12 @@ public class Theater implements Venue {
 
   public long getParent(){
     return this.parent;
+  }
+  
+  public void setSeatingChart(seatingChart seatingChart) {
+	  this.seatingChart = seatingChart;
+  }
+  public seatingChart getSeatingChart() {
+	  return this.seatingChart;
   }
 }
