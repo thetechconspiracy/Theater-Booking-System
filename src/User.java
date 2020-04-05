@@ -6,5 +6,7 @@
 public interface User {
 	public String getType();
 	public String getName();
+	public String getUserName();
+	public String getPassword();
 	public int getPriority();
 }

@@ -99,10 +99,26 @@ public class Manager implements User {
 	}
 	
 	/**
+	 * returns the username
+	 */
+	public String getUserName() {
+		return this.userName;
+	}
+	
+	/**
+	 * returns the password
+	 */
+	public String getPassword() {
+		return this.password;
+	}
+	
+	/**
 	 * returns the priority of the account
 	 */
 	public int getPriority() {
 		return this.priority;
 	}
+	
+	
 
 }

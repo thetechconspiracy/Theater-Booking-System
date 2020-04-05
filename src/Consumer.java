@@ -109,6 +109,20 @@ public class Consumer implements User {
 	}
 	
 	/**
+	 * returns the username
+	 */
+	public String getUserName() {
+		return this.userName;
+	}
+	
+	/**
+	 * returns the password
+	 */
+	public String getPassword() {
+		return this.password;
+	}
+	
+	/**
 	 * returns the priority of the user
 	 */
 	public int getPriority() {
