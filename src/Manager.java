@@ -59,13 +59,16 @@ public class Manager implements User {
 			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes));
 			break;
 		case 3:
-			System.out.println("Enter the movie's title: ");
+			System.out.println("Enter the concert's title: ");
 			String concertTitle = keyboard.nextLine();
-			System.out.println("Enter the movie's description: ");
+			System.out.println("Enter the concert's description: ");
 			String concertDes = keyboard.nextLine();
-			System.out.println("Enter the movie's rating: ");
+			System.out.println("Enter the concert's rating: ");
 			String concertRating = keyboard.nextLine();
-			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, "band"));
+			System.out.println("Enter the name of the band: ");
+			String band = keyboard.nextLine();
+			String[] cShowTimes = showTimes();
+			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, cShowTimes));
 			break;
 		default:
 			System.out.println("Invalid Choice");

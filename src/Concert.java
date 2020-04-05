@@ -24,6 +24,14 @@ public class Concert implements Event{
     this.times = new String[10];
   }
   
+  public Concert(String title, String des, String rating, String band, String[] times){//Intended for use with LoadEventDatabase only
+	    this.title = title;
+	    this.des = des;
+	    this.rating = rating;
+	    this.band = band;
+	    this.times = times;
+	  }
+  
   public void printEvent() {
 	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
