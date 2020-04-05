@@ -15,6 +15,7 @@ public class Movie implements Event{
   private String rating;
   private Director director;
   private Actor[] mainCast;
+  
 
   public Movie(String title, String des, String rating, String director, String cast){ // Only intended for use by LoadEventDatabase
     this.title = title;

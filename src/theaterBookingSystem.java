@@ -26,8 +26,9 @@ public class theaterBookingSystem {
 
 	    }
 	    
+	    Theater theater = new Theater("Test 1", events);
 	    User[] users = userArray();
-	    login(users);
+	    login(users, theater);
 		
 	}
 	
@@ -35,7 +36,7 @@ public class theaterBookingSystem {
 	 * login method that is called at the beginning for the user to initiate commands
 	 * it takes in an array of users to check the logins by
 	 */
-	public void login(User[] users) {
+	public void login(User[] users, Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Would you like to login as a:\n1: User\n2: Manager\n3: Continue as Guest");
 		int ans = keyboard.nextInt();
@@ -46,7 +47,7 @@ public class theaterBookingSystem {
 			String cUserName = keyboard.nextLine();
 			System.out.println("Enter your password: ");
 			String cPassword = keyboard.nextLine();
-			if(!checkCredentials(cUserName, cPassword, users)) {
+			if(checkCredentials(cUserName, cPassword, users).getType().equals("Admin")) {
 				System.out.println("Invalide login. Will continue as guest");
 				guestOptions();
 				return;
@@ -58,12 +59,12 @@ public class theaterBookingSystem {
 			String userName = keyboard.nextLine();
 			System.out.println("Enter your password: ");
 			String password = keyboard.nextLine();
-			if(!checkCredentials(userName, password, users)) {
+			if(checkCredentials(userName, password, users).getType().equals("Admin")) {
 				System.out.println("Invalide login. Will continue as guest");
 				guestOptions();
 				return;
 			}
-			managerOptions();
+			managerOptions((Manager)checkCredentials(userName, password, users), theater);
 			break;
 		case 3:
 			guestOptions();
@@ -79,16 +80,17 @@ public class theaterBookingSystem {
 	 * @return true or false depending on the login
 	 * this method takes in the strings and checks them against the user array for a valid login
 	 */
-	public boolean checkCredentials(String userName, String password, User[] users) {
+	public User checkCredentials(String userName, String password, User[] users) {
 		for(User user:users) {
 			if(user == null) {
 				break;
 			}
 			if(userName.equals(user.getUserName()) && password.equals(user.getPassword())) {
-				return true;
+				return user;
 			}
 		}
-		return false;
+		Admin guest = new Admin();
+		return guest;
 	}
 	
 	/**
@@ -105,10 +107,34 @@ public class theaterBookingSystem {
 	}
 	
 	
-	public void managerOptions() {
+	/**
+	 * this calls the manager options when a user logs in as a manager
+	 */
+	public void managerOptions(Manager manager, Theater theater) {
+		Scanner keyboard = new Scanner(System.in);
+		boolean cont = true;
 		System.out.println("Welcome to the Manager Screen");
+		while(cont) {
+			System.out.println("What would you like to do?\n1: Add an Event\n9: Quit");
+			int ans = keyboard.nextInt();
+			keyboard.nextLine();
+			switch(ans) {
+			case 1:
+				manager.addEvent(theater);
+				break;
+			case 9:
+				cont = false;
+				break;
+			}
+		}
+		
 		
 	}
+	
+	public void addEvent() {
+		
+	}
+	
 	
 	public void consumerOptions() {
 		System.out.println("Welcome to the Consumer Screen");
@@ -119,5 +145,6 @@ public class theaterBookingSystem {
 		System.out.println("Welcome to the Guest Screen");
 		
 	}
+	
 
 }

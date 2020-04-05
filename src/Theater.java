@@ -61,6 +61,16 @@ public class Theater implements Venue {
     this.tier4 = tier4;
     this.tier5 = tier5;
   }
+  
+  /**
+   * 
+   * constructor for the theater
+   * @return
+   */
+  public Theater(String name, ArrayList<Event> events) {
+	  this.name = name;
+	  this.events = events;
+  }
 
   private Seat[][] stringToSeats(String seating){
     Seat[][] seats;

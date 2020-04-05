@@ -47,13 +47,14 @@ public class Manager implements User {
 			theater.addEvent(new Movie(movieTitle, movieDes, movieRating));
 			break;
 		case 2:
-			System.out.println("Enter the movie's title: ");
+			System.out.println("Enter the play's title: ");
 			String playTitle = keyboard.nextLine();
-			System.out.println("Enter the movie's description: ");
+			System.out.println("Enter the play's description: ");
 			String playDes = keyboard.nextLine();
-			System.out.println("Enter the movie's rating: ");
+			System.out.println("Enter the play's rating: ");
 			String playRating = keyboard.nextLine();
-			theater.addEvent(new Play(playTitle, playDes, playRating));
+			String[] showTimes = showTimes();
+			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes));
 			break;
 		case 3:
 			System.out.println("Enter the movie's title: ");
@@ -62,12 +63,29 @@ public class Manager implements User {
 			String concertDes = keyboard.nextLine();
 			System.out.println("Enter the movie's rating: ");
 			String concertRating = keyboard.nextLine();
-			theater.addEvent(new Play(concertTitle, concertDes, concertRating));
+			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, "band"));
 			break;
 		default:
 			System.out.println("Invalid Choice");
 		}
 		
+	}
+	
+	/**
+	 * 
+	 * @return returns an array of strings that represent show times
+	 */
+	public String[] showTimes() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("How many showings will there be?");
+		int times = keyboard.nextInt();
+		keyboard.nextLine();
+		String[] showTimes = new String[times];
+		for(int i = 0; i < times; i++) {
+			System.out.println("Enter showtime " + (i+1) + ":");
+			showTimes[i] = keyboard.nextLine();
+		}
+		return showTimes;
 	}
 	
 	/**

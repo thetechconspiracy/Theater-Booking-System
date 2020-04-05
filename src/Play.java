@@ -16,6 +16,8 @@ public class Play implements Event{
 
   private Director playwright;
   private Actor[] cast;
+  
+  private String[] times;
 
 
   public Play(String title, String des, String rating, String playwright, String cast){ // Only intended for use by LoadEventDatabase
@@ -33,10 +35,11 @@ public class Play implements Event{
    * @param rating
    * this method is for a manager adding a play
    */
-  public Play(String title, String des, String rating) {
+  public Play(String title, String des, String rating, String[] times) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
+	  this.times = times;
   }
 
   public String toString(){

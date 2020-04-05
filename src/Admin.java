@@ -5,7 +5,7 @@
  */
 import java.util.*;
 
-public class Admin {
+public class Admin implements User {
 	private String name;
 	private int priority;
 	private String userName;
@@ -33,6 +33,14 @@ public class Admin {
 	
 	public boolean checkPrice() {
 		return true;
+	}
+	
+	public String getUserName() {
+		return null;
+	}
+	
+	public String getPassword() {
+		return null;
 	}
 
 }
