@@ -36,10 +36,10 @@ public class Ticket {
 			FileWriter filewriter = new FileWriter("c:/temp/ticket.txt");
 			PrintWriter printwriter = new PrintWriter(filewriter);
 			printwriter.println("**************************************");
-			printwriter.print(this.event.getTitle());
-			//TODO get individual date and time for an event
+			printwriter.println(this.event.getTitle());
 			printwriter.println(this.event.getRating());
 			printwriter.println(this.event.getDes());
+			printwriter.println(this.time);
 			printwriter.println("**************************************");
 			printwriter.close();
 		}
@@ -47,5 +47,14 @@ public class Ticket {
 			System.out.println("Could not successfully write to the file");
 		}
 		
+	}
+	
+	public void viewTicket() {
+		System.out.println("**************************************");
+		System.out.println(this.event.getTitle());
+		System.out.println(this.event.getRating());
+		System.out.println(this.event.getDes());
+		System.out.println(this.time);
+		System.out.println("**************************************");
 	}
 }

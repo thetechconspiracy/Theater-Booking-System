@@ -89,12 +89,21 @@ public class Consumer implements User {
 		
 		for(int i = 0; i < this.tickets.length; i++) {
 			if(tickets[i] == null) {
-				for(int j = i; j < tickets.length; j++) {
+				for(int j = i; j < i + number; j++) {
 					tickets[j] = new Ticket(event, time);
 				}
+				return;
 			}
 		}
 		System.out.println("Tickets have been purchased");
+	}
+	
+	public void viewTickets() {
+		for(int i = 0; i < tickets.length; i++) {
+			if(tickets[i] != null) {
+				tickets[i].viewTicket();
+			}
+		}
 	}
 	
 	

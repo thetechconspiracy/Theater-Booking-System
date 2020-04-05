@@ -161,6 +161,9 @@ public class theaterBookingSystem {
 				System.out.println("Which event would you like to review?");
 				consumer.rateMovie(theater.getEvent(pickMovie(consumer, theater)));
 				break;
+			case 4:
+				consumer.viewTickets();
+				break;
 			case 9:
 				cont = false;
 				break;
