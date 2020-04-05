@@ -35,6 +35,7 @@ public class Manager implements User {
 		
 		System.out.println("What would you like to add?\n1: Movie\n2: Play\n3: Concert");
 		int choice = keyboard.nextInt();
+		keyboard.nextLine();
 		switch(choice)
 		{
 		case 1:
@@ -44,7 +45,8 @@ public class Manager implements User {
 			String movieDes = keyboard.nextLine();
 			System.out.println("Enter the movie's rating: ");
 			String movieRating = keyboard.nextLine();
-			theater.addEvent(new Movie(movieTitle, movieDes, movieRating));
+			String[] mShowTimes = showTimes();
+			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, mShowTimes));
 			break;
 		case 2:
 			System.out.println("Enter the play's title: ");
@@ -68,6 +70,9 @@ public class Manager implements User {
 		default:
 			System.out.println("Invalid Choice");
 		}
+		System.out.println("Here are the updated events at the theater: ");
+		theater.printEvents();
+		System.out.println();
 		
 	}
 	

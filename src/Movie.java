@@ -15,6 +15,7 @@ public class Movie implements Event{
   private String rating;
   private Director director;
   private Actor[] mainCast;
+  private String[] times;
   
 
   public Movie(String title, String des, String rating, String director, String cast){ // Only intended for use by LoadEventDatabase
@@ -23,6 +24,7 @@ public class Movie implements Event{
     this.rating = rating;
     this.setDirector(director);
     this.setMainCast(cast);
+    this.times = new String[10];
   }
   
   /**
@@ -32,10 +34,23 @@ public class Movie implements Event{
    * @param rating
    * This method is for a manager adding a movie to the venue
    */
-  public Movie(String title, String des, String rating) {
+  public Movie(String title, String des, String rating, String[] times) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
+	  this.times = times;
+  }
+  
+  /**
+   * method for printing out an event
+   */
+  public void printEvent() {
+	  System.out.println("" + this.title + "	" + this.rating);
+	  System.out.println("" + this.des);
+	  for(int i = 0; i < this.times.length; i++) {
+		  System.out.print("" + times[i] + ", ");
+	  }
+	  System.out.println();
   }
 
   public String toString(){

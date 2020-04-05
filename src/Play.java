@@ -26,6 +26,7 @@ public class Play implements Event{
     this.rating = rating;
     this.setPlaywright(playwright);
     this.setCast(cast);
+    this.times = new String[10];
   }
   
   /**
@@ -41,9 +42,20 @@ public class Play implements Event{
 	  this.rating = rating;
 	  this.times = times;
   }
+  
+  /**
+   * method for printing out an event
+   */
+  public void printEvent() {
+	  System.out.println("" + this.title + "	" + this.rating);
+	  System.out.println("" + this.des);
+	  for(int i = 0; i < this.times.length; i++) {
+		  System.out.print("" + times[i] + ", ");
+	  }
+  }
 
   public String toString(){
-    return title + des + rating;
+    return title;
   }
 
 

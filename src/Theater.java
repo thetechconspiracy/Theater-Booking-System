@@ -71,6 +71,12 @@ public class Theater implements Venue {
 	  this.name = name;
 	  this.events = events;
   }
+  
+  public void printEvents() {
+	  for(int i = 0; i < events.size(); i++) {
+		  events.get(i).printEvent();
+	  }
+  }
 
   private Seat[][] stringToSeats(String seating){
     Seat[][] seats;

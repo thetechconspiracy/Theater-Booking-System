@@ -14,12 +14,23 @@ public class Concert implements Event{
   private ArrayList<Review> reviews;
   private String rating;
   private String band;
+  private String[] times;
 
   public Concert(String title, String des, String rating, String band){//Intended for use with LoadEventDatabase only
     this.title = title;
     this.des = des;
     this.rating = rating;
     this.band = band;
+    this.times = new String[10];
+  }
+  
+  public void printEvent() {
+	  System.out.println("" + this.title + "	" + this.rating);
+	  System.out.println("" + this.des);
+	  for(int i = 0; i < this.times.length; i++) {
+		  System.out.print("" + times[i] + ", ");
+	  }
+	  System.out.println();
   }
   
 

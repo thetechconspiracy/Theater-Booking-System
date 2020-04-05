@@ -15,4 +15,5 @@ public interface Event {
   public String getDes();
   public String getRating();
   public String getCastString();
+  public void printEvent();
 }
