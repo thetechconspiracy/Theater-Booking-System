@@ -1,18 +1,17 @@
 /**
- * 
- * @author Brian Remer
+* @author Brian Remer
  * This is the admin class. It has the power to check prices and times of movies.
  */
 import java.util.*;
 
-public class Admin implements User {
+public class Guest implements User {
 	private String name;
 	private int priority;
 	private String userName;
 	private HashMap password;
 	
 	public String getType() {
-		return "Admin";
+		return "Guest";
 	}
 	
 	public String getName() {

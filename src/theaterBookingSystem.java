@@ -90,7 +90,7 @@ public class theaterBookingSystem {
 				return user;
 			}
 		}
-		Admin guest = new Admin();
+		Guest guest = new Guest();
 		return guest;
 	}
 	
