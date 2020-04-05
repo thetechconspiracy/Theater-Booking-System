@@ -20,6 +20,7 @@ public class Play implements Event{
   private String[] times;
   private String[] Cast;
   private String playWright;
+  private seatingChart seatingChart;
 
 
   public Play(String title, String des, String rating, String playwright, String cast){ // Only intended for use by LoadEventDatabase
@@ -33,6 +34,7 @@ public class Play implements Event{
     this.Cast = new String[1];
     this.Cast[0] = "";
     this.reviews = new ArrayList<Review>();
+    this.seatingChart = new seatingChart(10,10);
   }
   
   /**
@@ -42,7 +44,7 @@ public class Play implements Event{
    * @param rating
    * this method is for a manager adding a play
    */
-  public Play(String title, String des, String rating, String[] times, String playwright, String[] cast) {
+  public Play(String title, String des, String rating, String[] times, String playwright, String[] cast, seatingChart seatingChart) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
@@ -50,6 +52,7 @@ public class Play implements Event{
 	  this.playWright = playwright;
 	  this.Cast = cast;
 	  this.reviews = new ArrayList<Review>();
+	  this.seatingChart = seatingChart;
   }
   
   /**

@@ -15,6 +15,7 @@ public class Concert implements Event{
   private String rating;
   private String band;
   private String[] times;
+  private seatingChart seatingChart;
 
   public Concert(String title, String des, String rating, String band){//Intended for use with LoadEventDatabase only
     this.title = title;
@@ -23,15 +24,17 @@ public class Concert implements Event{
     this.band = band;
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.reviews = new ArrayList<Review>();
+    this.seatingChart = new seatingChart(10, 10);
   }
   
-  public Concert(String title, String des, String rating, String band, String[] times){//Intended for use with LoadEventDatabase only
+  public Concert(String title, String des, String rating, String band, String[] times, seatingChart seatingChart){//Intended for use with LoadEventDatabase only
 	    this.title = title;
 	    this.des = des;
 	    this.rating = rating;
 	    this.band = band;
 	    this.times = times;
 	    this.reviews = new ArrayList<Review>();
+	    this.seatingChart = seatingChart;
 	  }
   
   public void printEvent() {

@@ -16,6 +16,7 @@ public class Movie implements Event{
   private Director director;
   private Actor[] mainCast;
   private String[] times;
+  private seatingChart seatingChart;
   
 
   public Movie(String title, String des, String rating, String director, String cast){ // Only intended for use by LoadEventDatabase
@@ -25,6 +26,7 @@ public class Movie implements Event{
     this.setDirector(director);
     this.setMainCast(cast);
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.seatingChart = new seatingChart(10, 10);
     this.reviews = new ArrayList<Review>();
   }
   
@@ -35,12 +37,13 @@ public class Movie implements Event{
    * @param rating
    * This method is for a manager adding a movie to the venue
    */
-  public Movie(String title, String des, String rating, String[] times) {
+  public Movie(String title, String des, String rating, String[] times, seatingChart seatingChart) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
 	  this.times = times;
 	  this.reviews = new ArrayList<Review>();
+	  this.seatingChart = seatingChart;
   }
   
   /**

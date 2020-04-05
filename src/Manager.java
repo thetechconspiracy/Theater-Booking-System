@@ -46,7 +46,8 @@ public class Manager implements User {
 			System.out.println("Enter the movie's rating: ");
 			String movieRating = keyboard.nextLine();
 			String[] mShowTimes = showTimes();
-			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, mShowTimes));
+			seatingChart seatingChart = setSeatingChart();
+			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, mShowTimes, seatingChart));
 			break;
 		case 2:
 			System.out.println("Enter the play's title: ");
@@ -59,7 +60,8 @@ public class Manager implements User {
 			String playwright = keyboard.nextLine();
 			String[] castMembers = cast();
 			String[] showTimes = showTimes();
-			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes, playwright, castMembers));
+			seatingChart pSeatingChart = setSeatingChart();
+			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes, playwright, castMembers, pSeatingChart));
 			break;
 		case 3:
 			System.out.println("Enter the concert's title: ");
@@ -71,7 +73,8 @@ public class Manager implements User {
 			System.out.println("Enter the name of the band: ");
 			String band = keyboard.nextLine();
 			String[] cShowTimes = showTimes();
-			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, cShowTimes));
+			seatingChart cSeatingChart = setSeatingChart();
+			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, cShowTimes, cSeatingChart));
 			break;
 		default:
 			System.out.println("Invalid Choice");
@@ -97,6 +100,18 @@ public class Manager implements User {
 			showTimes[i] = keyboard.nextLine();
 		}
 		return showTimes;
+	}
+	
+	/**
+	 * creates a seating chart to add to an event
+	 */
+	public seatingChart setSeatingChart() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("How many rows of seats?");
+		int rows = keyboard.nextInt();
+		System.out.println("How man seats per row?");
+		int seats = keyboard.nextInt();
+		return new seatingChart(rows, seats);
 	}
 	
 	/**
