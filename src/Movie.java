@@ -54,6 +54,13 @@ public class Movie implements Event{
 	  }
 	  System.out.println();
   }
+  
+  /**
+   * returns the array of showtimes
+   */
+  public String[] getTimes() {
+	  return this.times;
+  }
 
   public String toString(){
     return title + des + rating;

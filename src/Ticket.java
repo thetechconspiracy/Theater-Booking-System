@@ -9,12 +9,13 @@ import java.time.*;
 import java.util.*;
 
 public class Ticket {
-//TODO add event variable
 	private Event event;
-	private LocalTime time;
-	private LocalDate date;
+	private String time;
 	
-	
+	public Ticket(Event event, String time) {
+		this.event = event;
+		this.time = time;
+	}
 	public void setEvent(Event event) {
 		
 		this.event = event;
@@ -39,7 +40,6 @@ public class Ticket {
 			//TODO get individual date and time for an event
 			printwriter.println(this.event.getRating());
 			printwriter.println(this.event.getDes());
-			printwriter.println(this.event.getCastString());
 			printwriter.println("**************************************");
 			printwriter.close();
 		}
@@ -47,40 +47,5 @@ public class Ticket {
 			System.out.println("Could not successfully write to the file");
 		}
 		
-	}
-	
-	
-	/**
-	 * 
-	 * @param time, the time to set the ticket to
-	 * this method sets the time for the ticket
-	 */
-	public void setTime(LocalTime time) {
-		this.time = time;
-	}
-	
-	/**
-	 * 
-	 * @return returns the time of the ticket
-	 */
-	public LocalTime getTime() {
-		return this.time;
-	}
-	
-	/**
-	 * 
-	 * @param date, the date of the event
-	 * sets the date for the ticket
-	 */
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-	
-	/**
-	 * 
-	 * @return returns the date of the ticket
-	 */
-	public LocalDate getDate() {
-		return this.date;
 	}
 }

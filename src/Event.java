@@ -16,4 +16,5 @@ public interface Event {
   public String getRating();
   public String getCastString();
   public void printEvent();
+  public String[] getTimes();
 }

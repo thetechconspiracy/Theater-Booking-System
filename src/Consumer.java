@@ -72,6 +72,31 @@ public class Consumer implements User {
 		
 	}
 	
+	/**
+	 * 
+	 * @param event, takes in an event for ticket purchase
+	 * this method is for a consumer purchasing a ticket
+	 */
+	public void buyTicket(Event event) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Which showtime would you like?");
+		for(int i = 0; i < event.getTimes().length; i++) {
+			System.out.print("" + event.getTimes()[i] + ", ");
+		}
+		String time = keyboard.nextLine();
+		System.out.println("How many tickets would you like?");
+		int number = keyboard.nextInt();
+		
+		for(int i = 0; i < this.tickets.length; i++) {
+			if(tickets[i] == null) {
+				for(int j = i; j < tickets.length; j++) {
+					tickets[j] = new Ticket(event, time);
+				}
+			}
+		}
+		System.out.println("Tickets have been purchased");
+	}
+	
 	
 	/**
 	 * logs the user out of the system
