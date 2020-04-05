@@ -83,7 +83,8 @@ public class Consumer implements User {
 	/**
 	 * views the movies available for purchase
 	 */
-	public void viewMovies() {
+	public void viewMovies(Theater theater) {
+		theater.printEvents();
 		
 	}
 	

@@ -53,7 +53,7 @@ public class theaterBookingSystem {
 				guestOptions();
 				return;
 			}
-			consumerOptions();
+			consumerOptions((Consumer)checkCredentials(cUserName, cPassword, users), theater);
 			break;
 		case 2:
 			System.out.println("Enter your username: ");
@@ -132,13 +132,24 @@ public class theaterBookingSystem {
 		
 	}
 	
-	public void addEvent() {
-		
-	}
 	
-	
-	public void consumerOptions() {
+	public void consumerOptions(Consumer consumer, Theater theater) {
+		Scanner keyboard = new Scanner(System.in);
+		boolean cont = true;
 		System.out.println("Welcome to the Consumer Screen");
+		while(cont) {
+			System.out.println("What would you like to do?\n1: View Available Events\n9: Quit");
+			int ans = keyboard.nextInt();
+			keyboard.nextLine();
+			switch(ans) {
+			case 1:
+				consumer.viewMovies(theater);
+				break;
+			case 9:
+				cont = false;
+				break;
+			}
+		}
 		
 	}
 	
