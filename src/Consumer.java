@@ -43,6 +43,7 @@ public class Consumer implements User {
 		for(Ticket t : this.tickets) {
 			if(t != null) {
 				System.out.println(""+t.getEvent().getTitle());
+				System.out.println(""+t.getTime());
 				System.out.println("Would you like to print this ticket? Y/N");
 				String answer = keyboard.nextLine();
 				if(answer.equals("Y")) {

@@ -28,6 +28,10 @@ public class Ticket {
 		return this.event;
 	}
 	
+	public String getTime() {
+		return this.time;
+	}
+	
 	/**
 	 * prints the ticket to a text file
 	 */
