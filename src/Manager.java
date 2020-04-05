@@ -55,8 +55,11 @@ public class Manager implements User {
 			String playDes = keyboard.nextLine();
 			System.out.println("Enter the play's rating: ");
 			String playRating = keyboard.nextLine();
+			System.out.println("Enter the playwright's name: ");
+			String playwright = keyboard.nextLine();
+			String[] castMembers = cast();
 			String[] showTimes = showTimes();
-			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes));
+			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes, playwright, castMembers));
 			break;
 		case 3:
 			System.out.println("Enter the concert's title: ");
@@ -96,6 +99,21 @@ public class Manager implements User {
 		return showTimes;
 	}
 	
+	/**
+	 * method for adding members to a cast for a play
+	 */
+	public String[] cast() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("How many cast members will there be?");
+		int times = keyboard.nextInt();
+		keyboard.nextLine();
+		String[] castMembers = new String[times];
+		for(int i = 0; i < times; i++) {
+			System.out.println("Enter cast member " + (i+1) + ":");
+			castMembers[i] = keyboard.nextLine();
+		}
+		return castMembers;
+	}
 	/**
 	 * 
 	 */

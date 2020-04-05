@@ -21,7 +21,7 @@ public class Concert implements Event{
     this.des = des;
     this.rating = rating;
     this.band = band;
-    this.times = new String[10];
+    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
   }
   
   public Concert(String title, String des, String rating, String band, String[] times){//Intended for use with LoadEventDatabase only

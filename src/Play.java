@@ -18,6 +18,8 @@ public class Play implements Event{
   private Actor[] cast;
   
   private String[] times;
+  private String[] Cast;
+  private String playWright;
 
 
   public Play(String title, String des, String rating, String playwright, String cast){ // Only intended for use by LoadEventDatabase
@@ -26,7 +28,10 @@ public class Play implements Event{
     this.rating = rating;
     this.setPlaywright(playwright);
     this.setCast(cast);
-    this.times = new String[10];
+    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.playWright = "";
+    this.Cast = new String[1];
+    this.Cast[0] = "";
   }
   
   /**
@@ -36,11 +41,13 @@ public class Play implements Event{
    * @param rating
    * this method is for a manager adding a play
    */
-  public Play(String title, String des, String rating, String[] times) {
+  public Play(String title, String des, String rating, String[] times, String playwright, String[] cast) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
 	  this.times = times;
+	  this.playWright = playwright;
+	  this.Cast = cast;
   }
   
   /**
@@ -49,6 +56,11 @@ public class Play implements Event{
   public void printEvent() {
 	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
+	  System.out.println("Playwright: " + this.playWright);
+	  System.out.println("Cast: ");
+	  for(int i = 0; i < Cast.length; i++) {
+		  System.out.println(Cast[i]);
+	  }
 	  for(int i = 0; i < this.times.length; i++) {
 		  System.out.print("" + times[i] + ", ");
 	  }

@@ -24,7 +24,7 @@ public class Movie implements Event{
     this.rating = rating;
     this.setDirector(director);
     this.setMainCast(cast);
-    this.times = new String[10];
+    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
   }
   
   /**
