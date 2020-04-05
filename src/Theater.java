@@ -74,8 +74,19 @@ public class Theater implements Venue {
   
   public void printEvents() {
 	  for(int i = 0; i < events.size(); i++) {
+		  System.out.print("" + (i+1) + ": ");
 		  events.get(i).printEvent();
 	  }
+  }
+  public void printNumAndTitleOnly() {
+	  for(int i = 0; i < events.size(); i++) {
+		  System.out.print("" + (i+1) + ": ");
+		  System.out.println(events.get(i).getTitle());
+	  }
+  }
+  
+  public Event getEvent(int i) {
+	  return this.events.get(i);
   }
 
   private Seat[][] stringToSeats(String seating){

@@ -58,7 +58,7 @@ public class Consumer implements User {
 	 * @param movie, movie to have a review for
 	 * this method adds a review to a movie
 	 */
-	public void rateMovie(Movie movie) {
+	public void rateMovie(Event event) {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Enter a title for your review:");
 		String title = keyboard.nextLine();
@@ -67,7 +67,7 @@ public class Consumer implements User {
 		System.out.println("Enter a number of stars out of 5:");
 		int rating = keyboard.nextInt();
 		
-		movie.addReview(new Review(title, comment, rating));
+		event.addReview(new Review(title, comment, rating));
 		
 		
 	}

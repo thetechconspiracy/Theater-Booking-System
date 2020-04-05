@@ -32,6 +32,7 @@ public class Play implements Event{
     this.playWright = "";
     this.Cast = new String[1];
     this.Cast[0] = "";
+    this.reviews = new ArrayList<Review>();
   }
   
   /**
@@ -48,6 +49,7 @@ public class Play implements Event{
 	  this.times = times;
 	  this.playWright = playwright;
 	  this.Cast = cast;
+	  this.reviews = new ArrayList<Review>();
   }
   
   /**
@@ -62,8 +64,9 @@ public class Play implements Event{
 		  System.out.println(Cast[i]);
 	  }
 	  for(int i = 0; i < this.times.length; i++) {
-		  System.out.print("" + times[i] + ", ");
+		  System.out.print("   " + times[i] + ", ");
 	  }
+	  System.out.println();
   }
 
   public String toString(){
@@ -93,7 +96,8 @@ public class Play implements Event{
 
   @Override
   public boolean addReview(Review review) {
-    return false;
+	  this.reviews.add(review);
+	  return true;
   }
 
   public void setShowtime(LocalDateTime showtime) {

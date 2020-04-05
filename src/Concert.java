@@ -22,6 +22,7 @@ public class Concert implements Event{
     this.rating = rating;
     this.band = band;
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.reviews = new ArrayList<Review>();
   }
   
   public Concert(String title, String des, String rating, String band, String[] times){//Intended for use with LoadEventDatabase only
@@ -30,13 +31,14 @@ public class Concert implements Event{
 	    this.rating = rating;
 	    this.band = band;
 	    this.times = times;
+	    this.reviews = new ArrayList<Review>();
 	  }
   
   public void printEvent() {
 	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
 	  for(int i = 0; i < this.times.length; i++) {
-		  System.out.print("" + times[i] + ", ");
+		  System.out.print("   " + times[i] + ", ");
 	  }
 	  System.out.println();
   }
@@ -77,7 +79,8 @@ public class Concert implements Event{
 
   @Override
   public boolean addReview(Review review) {
-    return false;
+	this.reviews.add(review);
+    return true;
   }
 
   public void setShowtime(LocalDateTime showtime) {

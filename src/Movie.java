@@ -25,6 +25,7 @@ public class Movie implements Event{
     this.setDirector(director);
     this.setMainCast(cast);
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.reviews = new ArrayList<Review>();
   }
   
   /**
@@ -39,6 +40,7 @@ public class Movie implements Event{
 	  this.des = des;
 	  this.rating = rating;
 	  this.times = times;
+	  this.reviews = new ArrayList<Review>();
   }
   
   /**
@@ -48,7 +50,7 @@ public class Movie implements Event{
 	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
 	  for(int i = 0; i < this.times.length; i++) {
-		  System.out.print("" + times[i] + ", ");
+		  System.out.print("   " + times[i] + ", ");
 	  }
 	  System.out.println();
   }

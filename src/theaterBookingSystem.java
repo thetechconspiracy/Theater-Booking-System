@@ -109,6 +109,8 @@ public class theaterBookingSystem {
 	
 	
 	/**
+	 * @param manager, takes in a manager from which to run manager methods
+	 * @param theater, takes in a theater from which to call manager methods
 	 * this calls the manager options when a user logs in as a manager
 	 */
 	public void managerOptions(Manager manager, Theater theater) {
@@ -132,24 +134,45 @@ public class theaterBookingSystem {
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @param consumer, takes in a consumer from which to run consumer methods
+	 * @param theater, takes in a theater from which to run theater methods
+	 * this method runs when a consumer logs in
+	 */
 	public void consumerOptions(Consumer consumer, Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		boolean cont = true;
 		System.out.println("Welcome to the Consumer Screen");
 		while(cont) {
-			System.out.println("What would you like to do?\n1: View Available Events\n9: Quit");
+			System.out.println("What would you like to do?\n1: View Available Events\n2: Purchase a Ticket"
+					+ "\n3: Write a Review\n9: Quit");
 			int ans = keyboard.nextInt();
 			keyboard.nextLine();
 			switch(ans) {
 			case 1:
 				consumer.viewMovies(theater);
 				break;
+			case 2:
+				break;
+			case 3:
+				consumerReview(consumer, theater);
+				break;
 			case 9:
 				cont = false;
 				break;
 			}
 		}
+		
+	}
+	public void consumerReview(Consumer consumer, Theater theater) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.println("Which event would you like to review?");
+		theater.printNumAndTitleOnly();
+		int ans = keyboard.nextInt();
+		keyboard.nextLine();
+		consumer.rateMovie(theater.getEvent(ans));
 		
 	}
 	
