@@ -53,6 +53,14 @@ public class Concert implements Event{
 	  return this.times;
   }
   
+  /**
+   * 
+   * @return returns this event's seating chart
+   */
+  public seatingChart getSeatingChart() {
+	  return this.seatingChart;
+  }
+  
 
   public String toString(){
     return title + des + rating;

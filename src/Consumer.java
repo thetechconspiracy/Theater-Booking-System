@@ -87,11 +87,14 @@ public class Consumer implements User {
 		String time = keyboard.nextLine();
 		System.out.println("How many tickets would you like?");
 		int number = keyboard.nextInt();
+		keyboard.nextLine();
 		
+		int ticketNum = 1;
 		for(int i = 0; i < this.tickets.length; i++) {
 			if(tickets[i] == null) {
 				for(int j = i; j < i + number; j++) {
-					tickets[j] = new Ticket(event, time);
+					System.out.println("What seat would you like for ticket " + ticketNum + "?");
+					tickets[j] = event.getSeatingChart().seatStatus(event, time);
 				}
 				return;
 			}

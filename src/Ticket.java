@@ -11,10 +11,14 @@ import java.util.*;
 public class Ticket {
 	private Event event;
 	private String time;
+	private int row;
+	private int seat;
 	
-	public Ticket(Event event, String time) {
+	public Ticket(Event event, String time, int row, int seat) {
 		this.event = event;
 		this.time = time;
+		this.row = (row + 1);
+		this.seat = (seat + 1);
 	}
 	public void setEvent(Event event) {
 		
@@ -44,6 +48,7 @@ public class Ticket {
 			printwriter.println(this.event.getRating());
 			printwriter.println(this.event.getDes());
 			printwriter.println(this.time);
+			printwriter.println("Row Number: " + this.row + " Seat Number: " + this.seat);
 			printwriter.println("**************************************");
 			printwriter.close();
 		}
@@ -59,6 +64,7 @@ public class Ticket {
 		System.out.println(this.event.getRating());
 		System.out.println(this.event.getDes());
 		System.out.println(this.time);
+		System.out.println("Row Number: " + this.row + " Seat Number: " + this.seat);
 		System.out.println("**************************************");
 	}
 }

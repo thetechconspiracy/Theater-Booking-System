@@ -41,7 +41,7 @@ public class seatingChart {
 			System.out.println();
 		}
 		System.out.println();
-		System.out.println("Seats marked with \"O\" are available.");
+		System.out.println("Seats marked with \"X\" are unavailable.");
 	}
 	
 	/**
@@ -50,22 +50,24 @@ public class seatingChart {
 	 * @param y, column number
 	 * this changes the status of a seat to unavailable
 	 */
-	public void seatStatus() {
+	public Ticket seatStatus(Event event, String time) {
 		Scanner keyboard = new Scanner(System.in);
 		boolean cont = true;
 		while(cont) {
 			printChart();
 			System.out.println("Which row would you like?");
-			int row = keyboard.nextInt();
+			int row = (keyboard.nextInt()) - 1;
 			System.out.println("Which seat would you like?");
-			int seat = keyboard.nextInt();
+			int seat = (keyboard.nextInt()) - 1;
 			if(!checkSeatStatus(row, seat)) {
 				System.out.println("Seat taken. Pick Another.");
 				continue;
 			}
 			this.seats[row][seat] = "X";
 			cont = false;
-		} 
+			return new Ticket(event, time, row, seat);
+		}
+		return null;
 	}
 	
 	/**
