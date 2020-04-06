@@ -39,40 +39,49 @@ public class theaterBookingSystem {
 	 */
 	public void login(User[] users, Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Would you like to login as a:\n1: User\n2: Manager\n3: Continue as Guest");
-		int ans = keyboard.nextInt();
-		keyboard.nextLine();
-		Guest guest = new Guest();
-		switch(ans) {
-		case 1:
-			System.out.println("Enter your username: ");
-			String cUserName = keyboard.nextLine();
-			System.out.println("Enter your password: ");
-			String cPassword = keyboard.nextLine();
-			if(checkCredentials(cUserName, cPassword, users).getType().equals("Admin")) {
-				System.out.println("Invalide login. Will continue as guest");
+		boolean cont = true;
+		while(cont) {
+			System.out.println("Would you like to login as a:\n1: User\n2: Manager\n3: Continue as Guest\n4: Exit");
+			int ans = keyboard.nextInt();
+			keyboard.nextLine();
+			Guest guest = new Guest();
+			switch(ans) {
+			case 1:
+				System.out.println("Enter your username: ");
+				String cUserName = keyboard.nextLine();
+				System.out.println("Enter your password: ");
+				String cPassword = keyboard.nextLine();
+				if(checkCredentials(cUserName, cPassword, users).getType().equals("Guest")) {
+					System.out.println("Invalide login. Will continue as guest");
+					guestOptions(guest, theater);
+				}
+				else {
+					consumerOptions((Consumer)checkCredentials(cUserName, cPassword, users), theater);
+				}
+				break;
+			case 2:
+				System.out.println("Enter your username: ");
+				String userName = keyboard.nextLine();
+				System.out.println("Enter your password: ");
+				String password = keyboard.nextLine();
+				if(checkCredentials(userName, password, users).getType().equals("Guest")) {
+					System.out.println("Invalide login. Will continue as guest");
+					guestOptions(guest, theater);
+				}
+				else {
+					managerOptions((Manager)checkCredentials(userName, password, users), theater);
+				}
+				break;
+			case 3:
 				guestOptions(guest, theater);
-				return;
+				break;
+			case 4:
+				cont = false;
+				break;
 			}
-			consumerOptions((Consumer)checkCredentials(cUserName, cPassword, users), theater);
-			break;
-		case 2:
-			System.out.println("Enter your username: ");
-			String userName = keyboard.nextLine();
-			System.out.println("Enter your password: ");
-			String password = keyboard.nextLine();
-			if(checkCredentials(userName, password, users).getType().equals("Admin")) {
-				System.out.println("Invalide login. Will continue as guest");
-				guestOptions(guest, theater);
-				return;
-			}
-			managerOptions((Manager)checkCredentials(userName, password, users), theater);
-			break;
-		case 3:
-			guestOptions(guest, theater);
-			break;
 		}
 	}
+	
 	
 	/**
 	 * 
@@ -119,7 +128,7 @@ public class theaterBookingSystem {
 		boolean cont = true;
 		System.out.println("Welcome to the Manager Screen");
 		while(cont) {
-			System.out.println("What would you like to do?\n1: Add an Event\n2: View Events\n9: Quit");
+			System.out.println("What would you like to do?\n1: Add an Event\n2: View Events\n9: Logout");
 			int ans = keyboard.nextInt();
 			keyboard.nextLine();
 			switch(ans) {
@@ -150,7 +159,7 @@ public class theaterBookingSystem {
 		System.out.println("Welcome to the Consumer Screen");
 		while(cont) {
 			System.out.println("What would you like to do?\n1: View Available Events\n2: Purchase a Ticket"
-					+ "\n3: Write a Review\n4: View Tickets\n5: Print Tickets\n9: Quit");
+					+ "\n3: Write a Review\n4: View Tickets\n5: Print Tickets\n9: Logout");
 			int ans = keyboard.nextInt();
 			keyboard.nextLine();
 			switch(ans) {
