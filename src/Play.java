@@ -1,16 +1,15 @@
-/*
+/**
  * Written by Something Creative
- * Description
+ * 
+ * This is the Play class. It implements the Event interface
  */
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Play implements Event{
 
   private String title;
   private String des;
-  private LocalDateTime showtime;
   private ArrayList<Review> reviews;
   private String rating;
 
@@ -23,12 +22,20 @@ public class Play implements Event{
   private seatingChart seatingChart;
 
 
+  /**
+   * 
+   * @param title
+   * @param des
+   * @param rating
+   * @param playwright
+   * @param cast
+   * 
+   * constructor used by the JSON file
+   */
   public Play(String title, String des, String rating, String playwright, String cast){ // Only intended for use by LoadEventDatabase
     this.title = title;
     this.des = des;
     this.rating = rating;
-    this.setPlaywright(playwright);
-    this.setCast(cast);
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.playWright = "";
     this.Cast = new String[1];
@@ -91,7 +98,7 @@ public class Play implements Event{
   
   /**
    * 
-   * @return returns this event's seating chart
+   * Getters and setters for the Concert class
    */
   public seatingChart getSeatingChart() {
 	  return this.seatingChart;
@@ -118,18 +125,10 @@ public class Play implements Event{
     this.des = des;
   }
 
-  public LocalDateTime getShowtime() {
-    return showtime;
-  }
-
   @Override
   public boolean addReview(Review review) {
 	  this.reviews.add(review);
 	  return true;
-  }
-
-  public void setShowtime(LocalDateTime showtime) {
-    this.showtime = showtime;
   }
 
   public ArrayList<Review> getReviews() {
@@ -152,25 +151,8 @@ public class Play implements Event{
     return playwright;
   }
 
-  public void setPlaywright(Director playwright) {
-    this.playwright = playwright;
-  }
-
-  public void setPlaywright(String playwright){
-    ;
-    //TODO: Convert to Director
-  }
-
   public Actor[] getCast() {
     return cast;
-  }
-
-  public void setCast(Actor[] cast) {
-    this.cast = cast;
-  }
-  public void setCast(String cast){
-    ;
-    //TODO: Convert to cast
   }
 
   /**
