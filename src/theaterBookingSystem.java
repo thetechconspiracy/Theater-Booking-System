@@ -5,12 +5,15 @@ public class theaterBookingSystem {
 	public void run() {
 		ArrayList<Event> events = LoadEventDatabase.loadDatabase();
 
+		/*
 	    for(Event event : events){
 	      System.out.println(event);
 	    }
+	    */
 
-	    SaveEventDatabase.saveDatabase(events);
-
+	    //SaveEventDatabase.saveDatabase(events);
+	    
+	    /*
 	    ArrayList<Venue> venues = LoadVenueDatabase.loadDatabase();
 
 	    for(Venue venue : venues){
@@ -24,9 +27,10 @@ public class theaterBookingSystem {
 	      }
 
 	    }
+	    */
 	    
 	    Theater theater = new Theater("Test 1", events);
-	    theater.printEvents();
+	    //theater.printEvents();
 	    User[] users = userArray();
 	    login(users, theater);
 	    
