@@ -69,7 +69,7 @@ public class Manager implements User {
         break;
 			}
 			seatingChart seatingChart = setSeatingChart();
-			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, showTime, seatingChart, id));
+			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, id));
 			break;
 		case 2:
 			System.out.println("Enter the play's title: ");
@@ -99,7 +99,7 @@ public class Manager implements User {
 				break;
 			}
 			seatingChart pSeatingChart = setSeatingChart();
-			theater.addEvent(new Play(playTitle, playDes, playRating, showTime, playwright, castMembers, pSeatingChart, id));
+			theater.addEvent(new Play(playTitle, playDes, playRating, playwright, castMembers, id));
 			break;
 		case 3:
 			System.out.println("Enter the concert's title: ");
@@ -128,7 +128,7 @@ public class Manager implements User {
 				break;
 			}
 			seatingChart cSeatingChart = setSeatingChart();
-			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, showTime, cSeatingChart, id));
+			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, id));
 			break;
 		default:
 			System.out.println("Invalid Choice");

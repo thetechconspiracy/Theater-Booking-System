@@ -92,14 +92,14 @@ public class LoadEventDatabase {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime showTime = LocalDateTime.parse(timeString, formatter);
 
-        Show show = new Show(null, null);//Do this so it compiles
+        Show show = new Show(null, null, 0);//Do this so it compiles
         boolean found = false;
         MovieTheater movieTheater = new MovieTheater(null, null, null, 0,0);
         //Match venue ID to venue
         for(Venue venueReal : venues){
           long venueID = venueReal.getLocation();
           if(venueID == id){
-            show = new Show(showTime, venueReal);
+            show = new Show(showTime, venueReal, id);
             if(isMovie)
               movieTheater = (MovieTheater)venueReal;
 
@@ -126,6 +126,17 @@ public class LoadEventDatabase {
       }
     }catch(Exception e){
       e.printStackTrace();
+    }
+
+    //Add shows to events
+    for(Event event : events){
+      for(Show show : shows){
+        if(event.getId() == show.getId()){
+          event.addShow(show);
+          shows.remove(show);
+          continue;
+        }
+      }
     }
     return events;
   }

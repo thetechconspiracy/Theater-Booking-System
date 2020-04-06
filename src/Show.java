@@ -11,10 +11,12 @@ public class Show {
   private LocalDateTime time;
   Venue location;
   Theater theater;
+  int id;
 
-  public Show(LocalDateTime time, Venue location){
+  public Show(LocalDateTime time, Venue location, int id){
     this.time = time;
     this.location = location;
+    this.id = id;
     this.getSeatingInfo();
   }
 
@@ -88,4 +90,6 @@ public class Show {
   public void setLocation(Venue location) {
     this.location = location;
   }
+
+  public int getId(){ return this.id; }
 }
