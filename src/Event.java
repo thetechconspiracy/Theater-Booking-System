@@ -15,10 +15,9 @@ public interface Event {
   public String getTitle();
   public String getDes();
   public String getRating();
-  public String getCastString();
+  public String[] getCast();
   public void printEvent();
-  public LocalDateTime[] getTimes();
-  public seatingChart getSeatingChart();
   public void printReviews();
   public int getId();
+  public void addShow(Show show);
 }

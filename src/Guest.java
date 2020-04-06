@@ -45,9 +45,12 @@ public class Guest implements User {
 	public void buyTicket(Event event) {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Which showtime would you like?");
-		for(int i = 0; i < event.getTimes().length; i++) {
-			System.out.print("" + event.getTimes()[i] + ", ");
-		}
+
+		//TODO: Iterate through events, find all with desired ID, present list of showtimes
+
+
+
+
 		String time = keyboard.nextLine();
 		System.out.println("How many tickets would you like?");
 		int number = keyboard.nextInt();

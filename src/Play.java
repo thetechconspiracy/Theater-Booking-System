@@ -3,8 +3,6 @@
  * 
  * This is the Play class. It implements the Event interface
  */
-
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Play implements Event{
@@ -16,14 +14,11 @@ public class Play implements Event{
   private int id;
 
 
-  private Director playwright;
-  private Actor[] cast;
-  
-  private LocalDateTime[] times;
+  private String playwright;
   private String[] Cast;
   private String playWright;
-  private seatingChart seatingChart;
 
+  private ArrayList<Show> shows;
 
   /**
    * 
@@ -39,12 +34,12 @@ public class Play implements Event{
     this.title = title;
     this.des = des;
     this.rating = rating;
-    //this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    //this.time = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.playWright = "";
     this.Cast = new String[1];
     this.Cast[0] = "";
     this.reviews = new ArrayList<Review>();
-    this.seatingChart = new seatingChart(10,10);
+    this.shows = new ArrayList<>();
   }
   
   /**
@@ -54,16 +49,15 @@ public class Play implements Event{
    * @param rating
    * this method is for a manager adding a play
    */
-  public Play(String title, String des, String rating, LocalDateTime[] times, String playwright, String[] cast, seatingChart seatingChart, int id) {
+  public Play(String title, String des, String rating, String playwright, String[] cast, int id) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
-	  this.times = times;
 	  this.playWright = playwright;
 	  this.Cast = cast;
 	  this.reviews = new ArrayList<Review>();
-	  this.seatingChart = seatingChart;
 	  this.id = id;
+    this.shows = new ArrayList<>();
   }
   
   /**
@@ -105,8 +99,8 @@ public class Play implements Event{
 	  for(int i = 0; i < Cast.length; i++) {
 		  System.out.println(Cast[i]);
 	  }
-	  for(LocalDateTime time : times){
-	    System.out.println(time.toString());
+	  for(Show show : shows){
+	    System.out.println(show.getTimeFormatted());
     }
 	  System.out.println();
   }
@@ -121,22 +115,13 @@ public class Play implements Event{
 	  System.out.println("No more reviews.");
   }
   
-  /**
-   * returns the array of showtimes
-   */
-  public LocalDateTime[] getTimes() {
-	  return this.times;
-  }
+
   
   /**
    * 
    * Getters and setters for the Concert class
    */
-  public seatingChart getSeatingChart() {
-	  return this.seatingChart;
-  }
-
-  public String toString(){
+    public String toString(){
     return title;
   }
 
@@ -179,12 +164,12 @@ public class Play implements Event{
     this.rating = rating;
   }
 
-  public Director getPlaywright() {
+  public String getPlaywright() {
     return playwright;
   }
 
-  public Actor[] getCast() {
-    return cast;
+  public String[] getCast() {
+    return Cast;
   }
 
   /**
@@ -197,13 +182,11 @@ public class Play implements Event{
    * Returns cast as a String.  Used for JSON
    * @return cast in a comma separated string
    */
-  public String getCastString() {
-    //TODO: convert cast to String
-    return "<Main cast goes here>";
-  }
-  public String getPlaywrightString(){
-    return "<director>";
-  }
+
   public int getId(){ return this.id; }
 
+
+  public void addShow(Show show){
+    this.shows.add(show);
+  }
 }

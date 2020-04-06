@@ -62,6 +62,7 @@ public interface Venue {
    */
   public String getType();
 
+  public long getLocation();
 
 
 }

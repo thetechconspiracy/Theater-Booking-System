@@ -2,7 +2,6 @@
  * This is the Concert Class
  * It implements the Event interface
  */
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Concert implements Event{
@@ -13,8 +12,10 @@ public class Concert implements Event{
   private ArrayList<Review> reviews;
   private String rating;
   private String band;
-  private LocalDateTime[] times;
-  private seatingChart seatingChart;
+
+  private ArrayList<Show> shows;
+
+
 
   /**
    * 
@@ -31,32 +32,11 @@ public class Concert implements Event{
     this.rating = rating;
     this.band = band;
     this.id = id;
-    //this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    //this.time = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.reviews = new ArrayList<Review>();
-    this.seatingChart = new seatingChart(10, 10);
+    this.shows = new ArrayList<>();
   }
-  
-  /**
-   * 
-   * @param title
-   * @param des
-   * @param rating
-   * @param band
-   * @param times
-   * @param seatingChart
-   * 
-   * This is the Concert constructor that the manager uses when they are adding an event to a theater
-   */
-  public Concert(String title, String des, String rating, String band, LocalDateTime[] times, seatingChart seatingChart, int id){//Intended for use with LoadEventDatabase only
-	    this.title = title;
-	    this.des = des;
-	    this.rating = rating;
-	    this.band = band;
-	    this.times = times;
-	    this.reviews = new ArrayList<Review>();
-	    this.seatingChart = seatingChart;
-	    this.id = id;
-	  }
+
   
   /**
    * this is the method for printing out the information for the concert
@@ -92,8 +72,8 @@ public class Concert implements Event{
 
 	  System.out.println("" + this.title + "\nRated " + this.rating);
 	  System.out.println("" + this.des);
-	  for(LocalDateTime time : times)
-	    System.out.println(time.toString());
+
+
 	  System.out.println();
 	  System.out.println();
   }
@@ -109,19 +89,13 @@ public class Concert implements Event{
   }
   
   /**
-   * returns the array of showtimes
+   * returns the array of showtime
    */
-  public LocalDateTime[] getTimes() {
-	  return this.times;
-  }
-  
+
   /**
    * 
    * @return returns this event's seating chart
    */
-  public seatingChart getSeatingChart() {
-	  return this.seatingChart;
-  }
   
 
   /**
@@ -165,6 +139,11 @@ public class Concert implements Event{
 	  return rating;
   }
 
+  @Override
+  public String[] getCast() {
+    return new String[]{band};
+  }
+
   public void setRating(String rating) {
 	  this.rating = rating;
   }
@@ -194,4 +173,8 @@ public class Concert implements Event{
     return "<Main cast goes here>";
   }
   public int getId() { return this.id; }
+
+  public void addShow(Show show){
+    this.shows.add(show);
+  }
 }

@@ -62,7 +62,11 @@ public class Theater implements Venue {
     this.tier4 = tier4;
     this.tier5 = tier5;
   }
-  
+
+  public Seat[][] getSeats(){
+    return this.seats;
+  }
+
   /**
    * 
    * constructor for the theater
@@ -289,6 +293,11 @@ public class Theater implements Venue {
     if(parent == -1)
       return "theater";
     else return "movieChild";
+  }
+
+  @Override
+  public long getLocation() {
+    return location;
   }
 
   public long getParent(){

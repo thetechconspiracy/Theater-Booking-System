@@ -7,7 +7,6 @@
  */
 
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Movie implements Event{
@@ -17,11 +16,10 @@ public class Movie implements Event{
   private String rating;
   private Director director;
   private Actor[] mainCast;
-  private LocalDateTime[] times;
-  private seatingChart seatingChart;
   private String cast;
   private String Director;
   private int id;
+  private ArrayList<Show> shows;
   
 
   /**
@@ -38,12 +36,12 @@ public class Movie implements Event{
     this.title = title;
     this.des = des;
     this.rating = rating;
-    //this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
-    this.seatingChart = new seatingChart(10, 10);
+    //this.time = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.reviews = new ArrayList<Review>();
     this.cast = cast;
     this.Director = director;
     this.id = id;
+    shows = new ArrayList<>();
   }
   
   /**
@@ -53,16 +51,15 @@ public class Movie implements Event{
    * @param rating
    * This method is for a manager adding a movie to the venue
    */
-  public Movie(String title, String des, String rating, LocalDateTime[] times, seatingChart seatingChart, int id) {
+  public Movie(String title, String des, String rating,  int id) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
-	  this.times = times;
 	  this.reviews = new ArrayList<Review>();
-	  this.seatingChart = seatingChart;
 	  this.cast = "";
 	  this.Director = "";
 	  this.id = id;
+	  shows = new ArrayList<>();
   }
   
   /**
@@ -110,9 +107,10 @@ public class Movie implements Event{
 	  if(!this.cast.equals("")) {
 		  System.out.println("Cast: " + this.cast);
 	  }
-	  for(int i = 0; i < this.times.length; i++) {
-		  System.out.print("   " + times[i] + ", ");
-	  }
+	  for(Show show : shows){
+	    System.out.println(show.getTimeFormatted());
+    }
+
 	  System.out.println();
 	  System.out.println();
   }
@@ -128,19 +126,13 @@ public class Movie implements Event{
   }
   
   /**
-   * returns the array of showtimes
+   * returns the array of showtime
    */
-  public LocalDateTime[] getTimes() {
-	  return this.times;
-  }
-  
+
   /**
    * 
    * @return returns this event's seating chart
    */
-  public seatingChart getSeatingChart() {
-	  return this.seatingChart;
-  }
 
   public String getTitle() {
     return title;
@@ -179,6 +171,11 @@ public class Movie implements Event{
     return rating;
   }
 
+  @Override
+  public String[] getCast() {
+    return new String[]{cast};
+  }
+
   public void setRating(String rating) {
     this.rating = rating;
   }
@@ -201,15 +198,10 @@ public class Movie implements Event{
    */
   public String getType(){ return "movie"; }
 
-  /**
-   * Returns cast as a String.  Used for JSON
-   * @return cast in a comma separated string
-   */
-  public String getCastString() {
-    return "<Main cast goes here>";
-  }
 
-  public String getDirectorString(){
-    return "<director>";
+  public int getId(){ return this.id; }
+
+  public void addShow(Show show){
+    this.shows.add(show);
   }
 }

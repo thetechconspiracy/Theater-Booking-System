@@ -79,9 +79,9 @@ public class Consumer implements User {
 	public void buyTicket(Event event) {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Which showtime would you like?");
-		for(int i = 0; i < event.getTimes().length; i++) {
-			System.out.print("" + event.getTimes()[i] + ", ");
-		}
+		//TODO: Same as guest
+
+
 		String time = keyboard.nextLine();
 		System.out.println("How many tickets would you like?");
 		int number = keyboard.nextInt();

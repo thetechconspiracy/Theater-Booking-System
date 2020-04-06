@@ -104,4 +104,9 @@ public class Stage implements Venue{
   public String getType(){
     return "stage";
   }
+
+  @Override
+  public long getLocation() {
+    return location;
+  }
 }
