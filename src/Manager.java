@@ -129,18 +129,12 @@ public class Manager implements User {
 		}
 		return castMembers;
 	}
-	/**
-	 * 
-	 */
-	public void setTime() {
-		
-	}
 	
 	/**
-	 * 
+	 * views the movies available for purchase
 	 */
-	public void setPrice() {
-		
+	public void viewMovies(Theater theater) {
+		theater.printEvents();
 	}
 	
 	/**
@@ -169,13 +163,6 @@ public class Manager implements User {
 	 */
 	public String getPassword() {
 		return this.password;
-	}
-	
-	/**
-	 * returns the priority of the account
-	 */
-	public int getPriority() {
-		return this.priority;
 	}
 	
 	

@@ -119,12 +119,15 @@ public class theaterBookingSystem {
 		boolean cont = true;
 		System.out.println("Welcome to the Manager Screen");
 		while(cont) {
-			System.out.println("What would you like to do?\n1: Add an Event\n9: Quit");
+			System.out.println("What would you like to do?\n1: Add an Event\n2: View Events\n9: Quit");
 			int ans = keyboard.nextInt();
 			keyboard.nextLine();
 			switch(ans) {
 			case 1:
 				manager.addEvent(theater);
+				break;
+			case 2:
+				manager.viewMovies(theater);
 				break;
 			case 9:
 				cont = false;
