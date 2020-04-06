@@ -28,12 +28,6 @@ public class Consumer implements User {
 		this.tickets = new Ticket[100];
 	}
 	
-	/*
-	public void purchaseTicket(Movie movie) {
-		
-	}
-	*/
-	
 	/**
 	 * this method allows the user to print a ticket
 	 */
@@ -51,7 +45,6 @@ public class Consumer implements User {
 				}
 			}
 		}
-		
 	}
 	
 	/**
@@ -102,6 +95,9 @@ public class Consumer implements User {
 		System.out.println("Tickets have been purchased");
 	}
 	
+	/**
+	 * prints the tickets out to the console for the consumer to view
+	 */
 	public void viewTickets() {
 		for(int i = 0; i < tickets.length; i++) {
 			if(tickets[i] != null) {
@@ -123,14 +119,6 @@ public class Consumer implements User {
 	 */
 	public void viewMovies(Theater theater) {
 		theater.printEvents();
-		
-	}
-	
-	/**
-	 * views the times available to the user
-	 */
-	public void viewTimes() {
-		
 	}
 	
 	/**
@@ -159,13 +147,6 @@ public class Consumer implements User {
 	 */
 	public String getPassword() {
 		return this.password;
-	}
-	
-	/**
-	 * returns the priority of the user
-	 */
-	public int getPriority() {
-		return this.priority;
 	}
 	
 }

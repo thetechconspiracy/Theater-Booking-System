@@ -42,6 +42,7 @@ public class theaterBookingSystem {
 		System.out.println("Would you like to login as a:\n1: User\n2: Manager\n3: Continue as Guest");
 		int ans = keyboard.nextInt();
 		keyboard.nextLine();
+		Guest guest = new Guest();
 		switch(ans) {
 		case 1:
 			System.out.println("Enter your username: ");
@@ -50,7 +51,7 @@ public class theaterBookingSystem {
 			String cPassword = keyboard.nextLine();
 			if(checkCredentials(cUserName, cPassword, users).getType().equals("Admin")) {
 				System.out.println("Invalide login. Will continue as guest");
-				guestOptions();
+				guestOptions(guest, theater);
 				return;
 			}
 			consumerOptions((Consumer)checkCredentials(cUserName, cPassword, users), theater);
@@ -62,13 +63,13 @@ public class theaterBookingSystem {
 			String password = keyboard.nextLine();
 			if(checkCredentials(userName, password, users).getType().equals("Admin")) {
 				System.out.println("Invalide login. Will continue as guest");
-				guestOptions();
+				guestOptions(guest, theater);
 				return;
 			}
 			managerOptions((Manager)checkCredentials(userName, password, users), theater);
 			break;
 		case 3:
-			guestOptions();
+			guestOptions(guest, theater);
 			break;
 		}
 	}
@@ -113,7 +114,7 @@ public class theaterBookingSystem {
 	 * @param theater, takes in a theater from which to call manager methods
 	 * this calls the manager options when a user logs in as a manager
 	 */
-	public void managerOptions(Manager manager, Theater theater) {
+	private void managerOptions(Manager manager, Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		boolean cont = true;
 		System.out.println("Welcome to the Manager Screen");
@@ -155,11 +156,11 @@ public class theaterBookingSystem {
 				break;
 			case 2:
 				System.out.println("Which ticket would you like to purchase?");
-				consumer.buyTicket(theater.getEvent(pickMovie(consumer, theater)));
+				consumer.buyTicket(theater.getEvent(pickMovie(theater)));
 				break;
 			case 3:
 				System.out.println("Which event would you like to review?");
-				consumer.rateMovie(theater.getEvent(pickMovie(consumer, theater)));
+				consumer.rateMovie(theater.getEvent(pickMovie(theater)));
 				break;
 			case 4:
 				consumer.viewTickets();
@@ -174,7 +175,13 @@ public class theaterBookingSystem {
 		}
 		
 	}
-	public int pickMovie(Consumer consumer, Theater theater) {
+	
+	/**
+	 * 
+	 * @param theater
+	 * @return returns an int to pick a movie
+	 */
+	public int pickMovie(Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		
 		theater.printNumAndTitleOnly();
@@ -184,10 +191,36 @@ public class theaterBookingSystem {
 		
 	}
 	
-	public void guestOptions() {
+	public void guestOptions(Guest guest, Theater theater) {
 		System.out.println("Welcome to the Guest Screen");
-		
+		Scanner keyboard = new Scanner(System.in);
+		boolean cont = true;
+		while(cont) {
+			System.out.println("What would you like to do?\n1: View Available Events\n2: Purchase a Ticket"
+					+ "\n3: View Tickets\n4: Print Tickets\n9: Quit");
+			int ans = keyboard.nextInt();
+			keyboard.nextLine();
+			switch(ans) {
+			case 1:
+				guest.viewMovies(theater);
+				break;
+			case 2:
+				System.out.println("Which ticket would you like to purchase?");
+				guest.buyTicket(theater.getEvent(pickMovie(theater)));
+				break;
+			case 3:
+				guest.viewTickets();
+				break;
+			case 4:
+				guest.printTicket();
+				break;
+			case 9:
+				cont = false;
+				break;
+			}
+		}
 	}
+}
+
 	
 
-}
