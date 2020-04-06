@@ -16,10 +16,10 @@ public class Movie implements Event{
   private String rating;
   private Director director;
   private Actor[] mainCast;
+  private String[] times;
+  private seatingChart seatingChart;
   private String cast;
   private String Director;
-  private int id;
-  private ArrayList<Show> shows;
   
 
   /**
@@ -32,16 +32,15 @@ public class Movie implements Event{
    * 
    * This is the constructor that the JSON file uses
    */
-  public Movie(String title, String des, String rating, String director, String cast, int id){ // Only intended for use by LoadEventDatabase
+  public Movie(String title, String des, String rating, String director, String cast){ // Only intended for use by LoadEventDatabase
     this.title = title;
     this.des = des;
     this.rating = rating;
-    //this.time = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.seatingChart = new seatingChart(10, 10);
     this.reviews = new ArrayList<Review>();
     this.cast = cast;
     this.Director = director;
-    this.id = id;
-    shows = new ArrayList<>();
   }
   
   /**
@@ -51,66 +50,32 @@ public class Movie implements Event{
    * @param rating
    * This method is for a manager adding a movie to the venue
    */
-  public Movie(String title, String des, String rating,  int id) {
+  public Movie(String title, String des, String rating, String[] times, seatingChart seatingChart) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
+	  this.times = times;
 	  this.reviews = new ArrayList<Review>();
+	  this.seatingChart = seatingChart;
 	  this.cast = "";
 	  this.Director = "";
-	  this.id = id;
-	  shows = new ArrayList<>();
   }
   
   /**
    * method for printing out an event
    */
   public void printEvent() {
-	  //Calculate review scores
-    double average = 0;
-    int accumulator = 0;
-    for(Review review: reviews){
-      if(review == null)
-        continue;
-      average += review.getRating();
-      accumulator++;
-    }
-
-    average /= accumulator;
-
-    int averageInt = (int) Math.round(average);
-
-    String reviewScore = "";
-    //Calculate graphic
-    for(int i = 1; i <= averageInt; ++i){
-      //Stars
-      reviewScore.concat("*");
-    }
-    for(int i = averageInt + 1; i < 5; ++i){
-      //Dashes
-      reviewScore.concat("-");
-    }
-
-    reviewScore.concat("    ");
-    reviewScore.concat(Double.toString(average));
-
-
-    System.out.println("" + this.title + "\nRated	" + this.rating);
+	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
-    System.out.println(reviewScore);
-
-
-
 	  if(!this.Director.equals("")) {
 		  System.out.println("Director: " + this.Director);
 	  }
 	  if(!this.cast.equals("")) {
 		  System.out.println("Cast: " + this.cast);
 	  }
-	  for(Show show : shows){
-	    System.out.println(show.getTimeFormatted());
-    }
-
+	  for(int i = 0; i < this.times.length; i++) {
+		  System.out.print("   " + times[i] + ", ");
+	  }
 	  System.out.println();
 	  System.out.println();
   }
@@ -126,13 +91,19 @@ public class Movie implements Event{
   }
   
   /**
-   * returns the array of showtime
+   * returns the array of showtimes
    */
-
+  public String[] getTimes() {
+	  return this.times;
+  }
+  
   /**
    * 
    * @return returns this event's seating chart
    */
+  public seatingChart getSeatingChart() {
+	  return this.seatingChart;
+  }
 
   public String getTitle() {
     return title;
@@ -171,11 +142,6 @@ public class Movie implements Event{
     return rating;
   }
 
-  @Override
-  public String[] getCast() {
-    return new String[]{cast};
-  }
-
   public void setRating(String rating) {
     this.rating = rating;
   }
@@ -198,10 +164,15 @@ public class Movie implements Event{
    */
   public String getType(){ return "movie"; }
 
+  /**
+   * Returns cast as a String.  Used for JSON
+   * @return cast in a comma separated string
+   */
+  public String getCastString() {
+    return "<Main cast goes here>";
+  }
 
-  public int getId(){ return this.id; }
-
-  public void addShow(Show show){
-    this.shows.add(show);
+  public String getDirectorString(){
+    return "<director>";
   }
 }

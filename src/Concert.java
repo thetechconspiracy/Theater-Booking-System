@@ -8,14 +8,11 @@ public class Concert implements Event{
 
   private String title;
   private String des;
-  private int id;
   private ArrayList<Review> reviews;
   private String rating;
   private String band;
-
-  private ArrayList<Show> shows;
-
-
+  private String[] times;
+  private seatingChart seatingChart;
 
   /**
    * 
@@ -26,54 +23,46 @@ public class Concert implements Event{
    * 
    * This is the Concert constructor for use by loading the JSON database
    */
-  public Concert(String title, String des, String rating, String band, int id){//Intended for use with LoadEventDatabase only
+  public Concert(String title, String des, String rating, String band){//Intended for use with LoadEventDatabase only
     this.title = title;
     this.des = des;
     this.rating = rating;
     this.band = band;
-    this.id = id;
-    //this.time = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.reviews = new ArrayList<Review>();
-    this.shows = new ArrayList<>();
+    this.seatingChart = new seatingChart(10, 10);
   }
-
+  
+  /**
+   * 
+   * @param title
+   * @param des
+   * @param rating
+   * @param band
+   * @param times
+   * @param seatingChart
+   * 
+   * This is the Concert constructor that the manager uses when they are adding an event to a theater
+   */
+  public Concert(String title, String des, String rating, String band, String[] times, seatingChart seatingChart){//Intended for use with LoadEventDatabase only
+	    this.title = title;
+	    this.des = des;
+	    this.rating = rating;
+	    this.band = band;
+	    this.times = times;
+	    this.reviews = new ArrayList<Review>();
+	    this.seatingChart = seatingChart;
+	  }
   
   /**
    * this is the method for printing out the information for the concert
    */
   public void printEvent() {
-    //Calculate review scores
-    double average = 0;
-    int accumulator = 0;
-    for(Review review: reviews){
-      if(review == null)
-        continue;
-      average += review.getRating();
-      accumulator++;
-    }
-
-    average /= accumulator;
-
-    int averageInt = (int) Math.round(average);
-
-    String reviewScore = "";
-    //Calculate graphic
-    for(int i = 1; i <= averageInt; ++i){
-      //Stars
-      reviewScore.concat("*");
-    }
-    for(int i = averageInt + 1; i < 5; ++i){
-      //Dashes
-      reviewScore.concat("-");
-    }
-
-    reviewScore.concat("    ");
-    reviewScore.concat(Double.toString(average));
-
-	  System.out.println("" + this.title + "\nRated " + this.rating);
+	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
-
-
+	  for(int i = 0; i < this.times.length; i++) {
+		  System.out.print("   " + times[i] + ", ");
+	  }
 	  System.out.println();
 	  System.out.println();
   }
@@ -89,13 +78,19 @@ public class Concert implements Event{
   }
   
   /**
-   * returns the array of showtime
+   * returns the array of showtimes
    */
-
+  public String[] getTimes() {
+	  return this.times;
+  }
+  
   /**
    * 
    * @return returns this event's seating chart
    */
+  public seatingChart getSeatingChart() {
+	  return this.seatingChart;
+  }
   
 
   /**
@@ -139,11 +134,6 @@ public class Concert implements Event{
 	  return rating;
   }
 
-  @Override
-  public String[] getCast() {
-    return new String[]{band};
-  }
-
   public void setRating(String rating) {
 	  this.rating = rating;
   }
@@ -171,10 +161,5 @@ public class Concert implements Event{
    */
   public String getCastString() {
     return "<Main cast goes here>";
-  }
-  public int getId() { return this.id; }
-
-  public void addShow(Show show){
-    this.shows.add(show);
   }
 }

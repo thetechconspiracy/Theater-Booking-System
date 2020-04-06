@@ -122,12 +122,6 @@ public class MovieTheater implements Venue {
   public String getType(){
     return "movieTheater";
   }
-
-  @Override
-  public long getLocation() {
-    return location;
-  }
-
   public ArrayList<Theater> getTheaters(){
     return this.theaters;
   }

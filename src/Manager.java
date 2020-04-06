@@ -7,8 +7,6 @@
  * view events
  *
  */
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Manager implements User {
@@ -35,10 +33,7 @@ public class Manager implements User {
 	 */
 	public void addEvent(Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
-		String dateInput;
-		DateTimeFormatter formatter;
-		LocalDateTime showtime;
-		int id;
+		
 		System.out.println("What would you like to add?\n1: Movie\n2: Play\n3: Concert");
 		int choice = keyboard.nextInt();
 		keyboard.nextLine();
@@ -51,25 +46,9 @@ public class Manager implements User {
 			String movieDes = keyboard.nextLine();
 			System.out.println("Enter the movie's rating: ");
 			String movieRating = keyboard.nextLine();
-			System.out.println("Enter the showtime (yyyy-MM-dd HH:mm)");
-			dateInput = keyboard.nextLine();
-			//Convert to LocalDateTime
-			//https://www.java67.com/2016/04/how-to-convert-string-to-localdatetime-in-java8-example.html
-			formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-			LocalDateTime showTime = LocalDateTime.parse(dateInput, formatter);
-			System.out.println("Enter a unique numerical ID:");
-
-			while (true) {
-        try {
-          id = keyboard.nextInt();
-        } catch (Exception e) {
-        	System.out.println("Invalid input");
-          continue;
-        }
-        break;
-			}
+			String[] mShowTimes = showTimes();
 			seatingChart seatingChart = setSeatingChart();
-			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, id));
+			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, mShowTimes, seatingChart));
 			break;
 		case 2:
 			System.out.println("Enter the play's title: ");
@@ -81,25 +60,9 @@ public class Manager implements User {
 			System.out.println("Enter the playwright's name: ");
 			String playwright = keyboard.nextLine();
 			String[] castMembers = cast();
-			System.out.println("Enter the showtime (yyyy-MM-dd HH:mm)");
-			dateInput = keyboard.nextLine();
-			//Convert to LocalDateTime
-			//https://www.java67.com/2016/04/how-to-convert-string-to-localdatetime-in-java8-example.html
-			formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-			showTime = LocalDateTime.parse(dateInput, formatter);
-			System.out.println("Enter a unique numerical ID:");
-
-			while (true) {
-				try {
-					id = keyboard.nextInt();
-				} catch (Exception e) {
-					System.out.println("Invalid input");
-					continue;
-				}
-				break;
-			}
+			String[] showTimes = showTimes();
 			seatingChart pSeatingChart = setSeatingChart();
-			theater.addEvent(new Play(playTitle, playDes, playRating, playwright, castMembers, id));
+			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes, playwright, castMembers, pSeatingChart));
 			break;
 		case 3:
 			System.out.println("Enter the concert's title: ");
@@ -110,25 +73,9 @@ public class Manager implements User {
 			String concertRating = keyboard.nextLine();
 			System.out.println("Enter the name of the band: ");
 			String band = keyboard.nextLine();
-			System.out.println("Enter the showtime (yyyy-MM-dd HH:mm)");
-			dateInput = keyboard.nextLine();
-			//Convert to LocalDateTime
-			//https://www.java67.com/2016/04/how-to-convert-string-to-localdatetime-in-java8-example.html
-			formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-			showTime = LocalDateTime.parse(dateInput, formatter);
-			System.out.println("Enter a unique numerical ID:");
-
-			while (true) {
-				try {
-					id = keyboard.nextInt();
-				} catch (Exception e) {
-					System.out.println("Invalid input");
-					continue;
-				}
-				break;
-			}
+			String[] cShowTimes = showTimes();
 			seatingChart cSeatingChart = setSeatingChart();
-			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, id));
+			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, cShowTimes, cSeatingChart));
 			break;
 		default:
 			System.out.println("Invalid Choice");
