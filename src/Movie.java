@@ -16,6 +16,8 @@ public class Movie implements Event{
   private Actor[] mainCast;
   private String[] times;
   private seatingChart seatingChart;
+  private String cast;
+  private String Director;
   
 
   public Movie(String title, String des, String rating, String director, String cast){ // Only intended for use by LoadEventDatabase
@@ -27,6 +29,8 @@ public class Movie implements Event{
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.seatingChart = new seatingChart(10, 10);
     this.reviews = new ArrayList<Review>();
+    this.cast = cast;
+    this.Director = director;
   }
   
   /**
@@ -43,6 +47,8 @@ public class Movie implements Event{
 	  this.times = times;
 	  this.reviews = new ArrayList<Review>();
 	  this.seatingChart = seatingChart;
+	  this.cast = "";
+	  this.Director = "";
   }
   
   /**
@@ -51,9 +57,16 @@ public class Movie implements Event{
   public void printEvent() {
 	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
+	  if(!this.Director.equals("")) {
+		  System.out.println("Director: " + this.Director);
+	  }
+	  if(!this.cast.equals("")) {
+		  System.out.println("Cast: " + this.cast);
+	  }
 	  for(int i = 0; i < this.times.length; i++) {
 		  System.out.print("   " + times[i] + ", ");
 	  }
+	  System.out.println();
 	  System.out.println();
   }
   

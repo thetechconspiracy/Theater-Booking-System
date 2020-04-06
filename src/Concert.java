@@ -44,6 +44,7 @@ public class Concert implements Event{
 		  System.out.print("   " + times[i] + ", ");
 	  }
 	  System.out.println();
+	  System.out.println();
   }
   
   /**
