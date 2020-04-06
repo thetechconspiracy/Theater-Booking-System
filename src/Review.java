@@ -1,9 +1,11 @@
-/*
- * Written by Something Creative
- * A review
+/**
+ * 
+ * @author Something Creative
+ * 
+ * This is the review class. It is a review for an event
+ *
  */
 
-import java.text.NumberFormat;
 
 public class Review {
   private String title;
@@ -28,6 +30,10 @@ public class Review {
     setReview(review);
   }
 
+  /**
+   * 
+   * @return returns the information for the review in an array
+   */
   public String[] getReview(){
     String[] review = new String[3];
     review[0] = title;
@@ -37,6 +43,9 @@ public class Review {
     return review;
   }
   
+  /**
+   * this prints out the information in a review
+   */
   public void printReview() {
 	  String[] review = this.getReview();
 	  System.out.println(review[0]);
