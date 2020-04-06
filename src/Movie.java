@@ -7,6 +7,7 @@
  */
 
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Movie implements Event{
@@ -16,10 +17,11 @@ public class Movie implements Event{
   private String rating;
   private Director director;
   private Actor[] mainCast;
-  private String[] times;
+  private LocalDateTime[] times;
   private seatingChart seatingChart;
   private String cast;
   private String Director;
+  private int id;
   
 
   /**
@@ -32,15 +34,16 @@ public class Movie implements Event{
    * 
    * This is the constructor that the JSON file uses
    */
-  public Movie(String title, String des, String rating, String director, String cast){ // Only intended for use by LoadEventDatabase
+  public Movie(String title, String des, String rating, String director, String cast, int id){ // Only intended for use by LoadEventDatabase
     this.title = title;
     this.des = des;
     this.rating = rating;
-    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    //this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.seatingChart = new seatingChart(10, 10);
     this.reviews = new ArrayList<Review>();
     this.cast = cast;
     this.Director = director;
+    this.id = id;
   }
   
   /**
@@ -50,7 +53,7 @@ public class Movie implements Event{
    * @param rating
    * This method is for a manager adding a movie to the venue
    */
-  public Movie(String title, String des, String rating, String[] times, seatingChart seatingChart) {
+  public Movie(String title, String des, String rating, LocalDateTime[] times, seatingChart seatingChart, int id) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
@@ -59,14 +62,48 @@ public class Movie implements Event{
 	  this.seatingChart = seatingChart;
 	  this.cast = "";
 	  this.Director = "";
+	  this.id = id;
   }
   
   /**
    * method for printing out an event
    */
   public void printEvent() {
-	  System.out.println("" + this.title + "	" + this.rating);
+	  //Calculate review scores
+    double average = 0;
+    int accumulator = 0;
+    for(Review review: reviews){
+      if(review == null)
+        continue;
+      average += review.getRating();
+      accumulator++;
+    }
+
+    average /= accumulator;
+
+    int averageInt = (int) Math.round(average);
+
+    String reviewScore = "";
+    //Calculate graphic
+    for(int i = 1; i <= averageInt; ++i){
+      //Stars
+      reviewScore.concat("*");
+    }
+    for(int i = averageInt + 1; i < 5; ++i){
+      //Dashes
+      reviewScore.concat("-");
+    }
+
+    reviewScore.concat("    ");
+    reviewScore.concat(Double.toString(average));
+
+
+    System.out.println("" + this.title + "\nRated	" + this.rating);
 	  System.out.println("" + this.des);
+    System.out.println(reviewScore);
+
+
+
 	  if(!this.Director.equals("")) {
 		  System.out.println("Director: " + this.Director);
 	  }
@@ -93,7 +130,7 @@ public class Movie implements Event{
   /**
    * returns the array of showtimes
    */
-  public String[] getTimes() {
+  public LocalDateTime[] getTimes() {
 	  return this.times;
   }
   

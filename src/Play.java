@@ -4,6 +4,7 @@
  * This is the Play class. It implements the Event interface
  */
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Play implements Event{
@@ -12,11 +13,13 @@ public class Play implements Event{
   private String des;
   private ArrayList<Review> reviews;
   private String rating;
+  private int id;
+
 
   private Director playwright;
   private Actor[] cast;
   
-  private String[] times;
+  private LocalDateTime[] times;
   private String[] Cast;
   private String playWright;
   private seatingChart seatingChart;
@@ -32,11 +35,11 @@ public class Play implements Event{
    * 
    * constructor used by the JSON file
    */
-  public Play(String title, String des, String rating, String playwright, String cast){ // Only intended for use by LoadEventDatabase
+  public Play(String title, String des, String rating, String playwright, String cast, int id){ // Only intended for use by LoadEventDatabase
     this.title = title;
     this.des = des;
     this.rating = rating;
-    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    //this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.playWright = "";
     this.Cast = new String[1];
     this.Cast[0] = "";
@@ -51,7 +54,7 @@ public class Play implements Event{
    * @param rating
    * this method is for a manager adding a play
    */
-  public Play(String title, String des, String rating, String[] times, String playwright, String[] cast, seatingChart seatingChart) {
+  public Play(String title, String des, String rating, LocalDateTime[] times, String playwright, String[] cast, seatingChart seatingChart, int id) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
@@ -60,22 +63,51 @@ public class Play implements Event{
 	  this.Cast = cast;
 	  this.reviews = new ArrayList<Review>();
 	  this.seatingChart = seatingChart;
+	  this.id = id;
   }
   
   /**
    * method for printing out an event
    */
   public void printEvent() {
-	  System.out.println("" + this.title + "	" + this.rating);
+    //Calculate review scores
+    double average = 0;
+    int accumulator = 0;
+    for(Review review: reviews){
+      if(review == null)
+        continue;
+      average += review.getRating();
+      accumulator++;
+    }
+
+    average /= accumulator;
+
+    int averageInt = (int) Math.round(average);
+
+    String reviewScore = "";
+    //Calculate graphic
+    for(int i = 1; i <= averageInt; ++i){
+      //Stars
+      reviewScore.concat("*");
+    }
+    for(int i = averageInt + 1; i < 5; ++i){
+      //Dashes
+      reviewScore.concat("-");
+    }
+
+    reviewScore.concat("    ");
+    reviewScore.concat(Double.toString(average));
+
+    System.out.println("" + this.title + "\nRated " + this.rating);
 	  System.out.println("" + this.des);
 	  System.out.println("Playwright: " + this.playWright);
 	  System.out.println("Cast: ");
 	  for(int i = 0; i < Cast.length; i++) {
 		  System.out.println(Cast[i]);
 	  }
-	  for(int i = 0; i < this.times.length; i++) {
-		  System.out.print("   " + times[i] + ", ");
-	  }
+	  for(LocalDateTime time : times){
+	    System.out.println(time.toString());
+    }
 	  System.out.println();
   }
   
@@ -83,16 +115,16 @@ public class Play implements Event{
    * method that prints out reviews for the movie
    */
   public void printReviews() {
-	  for(int i = 0; i < reviews.size(); i++) {
-		  reviews.get(i).printReview();
-	  }
+	  for(Review review : reviews){
+	    review.printReview();
+    }
 	  System.out.println("No more reviews.");
   }
   
   /**
    * returns the array of showtimes
    */
-  public String[] getTimes() {
+  public LocalDateTime[] getTimes() {
 	  return this.times;
   }
   
@@ -172,4 +204,6 @@ public class Play implements Event{
   public String getPlaywrightString(){
     return "<director>";
   }
+  public int getId(){ return this.id; }
+
 }

@@ -2,16 +2,18 @@
  * This is the Concert Class
  * It implements the Event interface
  */
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Concert implements Event{
 
   private String title;
   private String des;
+  private int id;
   private ArrayList<Review> reviews;
   private String rating;
   private String band;
-  private String[] times;
+  private LocalDateTime[] times;
   private seatingChart seatingChart;
 
   /**
@@ -23,12 +25,13 @@ public class Concert implements Event{
    * 
    * This is the Concert constructor for use by loading the JSON database
    */
-  public Concert(String title, String des, String rating, String band){//Intended for use with LoadEventDatabase only
+  public Concert(String title, String des, String rating, String band, int id){//Intended for use with LoadEventDatabase only
     this.title = title;
     this.des = des;
     this.rating = rating;
     this.band = band;
-    this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
+    this.id = id;
+    //this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.reviews = new ArrayList<Review>();
     this.seatingChart = new seatingChart(10, 10);
   }
@@ -44,7 +47,7 @@ public class Concert implements Event{
    * 
    * This is the Concert constructor that the manager uses when they are adding an event to a theater
    */
-  public Concert(String title, String des, String rating, String band, String[] times, seatingChart seatingChart){//Intended for use with LoadEventDatabase only
+  public Concert(String title, String des, String rating, String band, LocalDateTime[] times, seatingChart seatingChart, int id){//Intended for use with LoadEventDatabase only
 	    this.title = title;
 	    this.des = des;
 	    this.rating = rating;
@@ -52,17 +55,45 @@ public class Concert implements Event{
 	    this.times = times;
 	    this.reviews = new ArrayList<Review>();
 	    this.seatingChart = seatingChart;
+	    this.id = id;
 	  }
   
   /**
    * this is the method for printing out the information for the concert
    */
   public void printEvent() {
-	  System.out.println("" + this.title + "	" + this.rating);
+    //Calculate review scores
+    double average = 0;
+    int accumulator = 0;
+    for(Review review: reviews){
+      if(review == null)
+        continue;
+      average += review.getRating();
+      accumulator++;
+    }
+
+    average /= accumulator;
+
+    int averageInt = (int) Math.round(average);
+
+    String reviewScore = "";
+    //Calculate graphic
+    for(int i = 1; i <= averageInt; ++i){
+      //Stars
+      reviewScore.concat("*");
+    }
+    for(int i = averageInt + 1; i < 5; ++i){
+      //Dashes
+      reviewScore.concat("-");
+    }
+
+    reviewScore.concat("    ");
+    reviewScore.concat(Double.toString(average));
+
+	  System.out.println("" + this.title + "\nRated " + this.rating);
 	  System.out.println("" + this.des);
-	  for(int i = 0; i < this.times.length; i++) {
-		  System.out.print("   " + times[i] + ", ");
-	  }
+	  for(LocalDateTime time : times)
+	    System.out.println(time.toString());
 	  System.out.println();
 	  System.out.println();
   }
@@ -80,7 +111,7 @@ public class Concert implements Event{
   /**
    * returns the array of showtimes
    */
-  public String[] getTimes() {
+  public LocalDateTime[] getTimes() {
 	  return this.times;
   }
   
@@ -162,4 +193,5 @@ public class Concert implements Event{
   public String getCastString() {
     return "<Main cast goes here>";
   }
+  public int getId() { return this.id; }
 }

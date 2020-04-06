@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 /**
  * 
  * @author Something Creative
@@ -14,7 +17,8 @@ public interface Event {
   public String getRating();
   public String getCastString();
   public void printEvent();
-  public String[] getTimes();
+  public LocalDateTime[] getTimes();
   public seatingChart getSeatingChart();
   public void printReviews();
+  public int getId();
 }
