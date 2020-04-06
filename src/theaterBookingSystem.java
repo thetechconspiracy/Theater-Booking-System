@@ -1,36 +1,17 @@
 import java.util.*;
-
+/**
+ * 
+ * @author Something Creative
+ * 
+ * This is the theaterBookingSystem class.
+ * This is what main calls to execute the program
+ *
+ */
 public class theaterBookingSystem {
 	
 	public void run() {
 		ArrayList<Event> events = LoadEventDatabase.loadDatabase();
-
-		/*
-	    for(Event event : events){
-	      System.out.println(event);
-	    }
-	    */
-
-	    //SaveEventDatabase.saveDatabase(events);
-	    
-	    /*
-	    ArrayList<Venue> venues = LoadVenueDatabase.loadDatabase();
-
-	    for(Venue venue : venues){
-	      if(venue.getType().equals("movieTheater")){
-	        MovieTheater movie = (MovieTheater)venue;
-	        ArrayList<Theater> children= movie.getTheaters();
-
-	        for(Theater theater : children)
-	          theater.printSeatingChart();
-	        //System.exit(0);
-	      }
-
-	    }
-	    */
-	    
 	    Theater theater = new Theater("Test 1", events);
-	    //theater.printEvents();
 	    User[] users = userArray();
 	    login(users, theater);
 	    
@@ -211,6 +192,12 @@ public class theaterBookingSystem {
 		
 	}
 	
+	/**
+	 * 
+	 * @param guest
+	 * @param theater
+	 * This is the method that runs for a guest
+	 */
 	public void guestOptions(Guest guest, Theater theater) {
 		System.out.println("Welcome to the Guest Screen");
 		Scanner keyboard = new Scanner(System.in);

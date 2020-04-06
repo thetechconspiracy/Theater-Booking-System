@@ -1,8 +1,8 @@
-/*
+/**
  * Written by Something Creative
- * Description
+ * 
+ * This contains the main method
  */
-
 import java.util.ArrayList;
 
 public class Main {
