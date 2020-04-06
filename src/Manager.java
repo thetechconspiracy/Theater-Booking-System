@@ -1,8 +1,10 @@
 /**
  * 
- * @author Brian Remer
+ * @author Something Creative
+ *
  * 
- * This the Manager Class. This type of user has the ability to add movies to the system and set the times and prices.
+ * This the Manager Class. This type of user has the ability to add events to the system and
+ * view events
  *
  */
 import java.util.*;
@@ -89,7 +91,7 @@ public class Manager implements User {
 	 * 
 	 * @return returns an array of strings that represent show times
 	 */
-	public String[] showTimes() {
+	private String[] showTimes() {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("How many showings will there be?");
 		int times = keyboard.nextInt();
@@ -105,7 +107,7 @@ public class Manager implements User {
 	/**
 	 * creates a seating chart to add to an event
 	 */
-	public seatingChart setSeatingChart() {
+	private seatingChart setSeatingChart() {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("How many rows of seats?");
 		int rows = keyboard.nextInt();
@@ -117,7 +119,7 @@ public class Manager implements User {
 	/**
 	 * method for adding members to a cast for a play
 	 */
-	public String[] cast() {
+	private String[] cast() {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("How many cast members will there be?");
 		int times = keyboard.nextInt();

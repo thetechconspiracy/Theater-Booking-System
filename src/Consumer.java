@@ -1,8 +1,10 @@
-import java.util.*;
-
 /**
- * This is the consumer class. It has the ability to store tickets and make purchases.
+ * Written by Something Creative
+ * This is the consumer class. It has the ability to store tickets, purchase tickets, print tickets, 
+ * view movies and reviews, and write reviews.
  */
+
+import java.util.*;
 
 public class Consumer implements User {
 

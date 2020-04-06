@@ -1,5 +1,5 @@
 /**
-* @author Brian Remer
+* @author Something Creative
  * This is the Guest class.
  * It has options similar to the consumer class, but there is no account tied to it
  * They also cannot write reviews
@@ -10,6 +10,9 @@ public class Guest implements User {
 	private String name;
 	private Ticket[] tickets;
 	
+	/**
+	 * guest constructor
+	 */
 	public Guest() {
 		this.name = "Guest";
 		this.tickets = new Ticket[100];
@@ -81,7 +84,9 @@ public class Guest implements User {
 		theater.printEvents();
 	}
 	
-	
+	/**
+	 * getters and setters for the guest
+	 */
 	public String getType() {
 		return "Guest";
 	}
