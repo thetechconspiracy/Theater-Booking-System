@@ -41,9 +41,7 @@ public class Consumer implements User {
 				if(answer.equalsIgnoreCase("y")) {
 					t.printTicket();
 				}
-				else {}
 			}
-			else {}
 		}
 	}
 	
@@ -95,9 +93,7 @@ public class Consumer implements User {
 					System.out.println("What seat would you like for ticket " + ticketNum + "?");
 					tickets[j] = event.getSeatingChart().seatStatus(event, time);
 				}
-				return; /* won't this immediately break out of the method without finishing the outer for loop? */
 			}
-			else {}
 		}
 		System.out.println("Tickets have been purchased");
 	}
@@ -111,14 +107,6 @@ public class Consumer implements User {
 				tickets[i].viewTicket();
 			}
 		}
-	}
-	
-	
-	/**
-	 * logs the user out of the system
-	 */
-	public void logout() {
-		
 	}
 	
 	/**
