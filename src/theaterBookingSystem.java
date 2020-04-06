@@ -163,7 +163,7 @@ public class theaterBookingSystem {
 		System.out.println("Welcome to the Consumer Screen");
 		while(cont) {
 			System.out.println("What would you like to do?\n1: View Available Events\n2: Purchase a Ticket"
-					+ "\n3: Write a Review\n4: View Tickets\n5: Print Tickets\n6: View Movie Reviews\n9: Logout");
+					+ "\n3: Write a Review\n4: View Tickets\n5: Print Tickets\n6: View Reviews\n9: Logout");
 			int ans = keyboard.nextInt();
 			keyboard.nextLine();
 			switch(ans) {
@@ -185,6 +185,7 @@ public class theaterBookingSystem {
 				consumer.printTicket();
 				break;
 			case 6:
+				System.out.println("Which event would you like to see reviews for?");
 				theater.getEvent(pickMovie(theater)).printReviews();
 				break;
 			case 9:
@@ -216,7 +217,7 @@ public class theaterBookingSystem {
 		boolean cont = true;
 		while(cont) {
 			System.out.println("What would you like to do?\n1: View Available Events\n2: Purchase a Ticket"
-					+ "\n3: View Tickets\n4: Print Tickets\n9: Quit");
+					+ "\n3: View Tickets\n4: Print Tickets\n5: View Reviews\n9: Quit");
 			int ans = keyboard.nextInt();
 			keyboard.nextLine();
 			switch(ans) {
@@ -232,6 +233,10 @@ public class theaterBookingSystem {
 				break;
 			case 4:
 				guest.printTicket();
+				break;
+			case 5:
+				System.out.println("Which event would you like to see reviews for?");
+				theater.getEvent(pickMovie(theater)).printReviews();
 				break;
 			case 9:
 				cont = false;
