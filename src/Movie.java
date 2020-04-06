@@ -1,10 +1,12 @@
-/*
+/**
+ * 
  * Written by Something Creative
- * Description
+ * 
+ * This is the Movie class. It implements the Event interface.
+ * 
  */
 
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Movie implements Event{
@@ -20,12 +22,20 @@ public class Movie implements Event{
   private String Director;
   
 
+  /**
+   * 
+   * @param title
+   * @param des
+   * @param rating
+   * @param director
+   * @param cast
+   * 
+   * This is the constructor that the JSON file uses
+   */
   public Movie(String title, String des, String rating, String director, String cast){ // Only intended for use by LoadEventDatabase
     this.title = title;
     this.des = des;
     this.rating = rating;
-    this.setDirector(director);
-    this.setMainCast(cast);
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.seatingChart = new seatingChart(10, 10);
     this.reviews = new ArrayList<Review>();
@@ -95,10 +105,6 @@ public class Movie implements Event{
 	  return this.seatingChart;
   }
 
-  public String toString(){
-    return title + des + rating;
-  }
-
   public String getTitle() {
     return title;
   }
@@ -111,12 +117,19 @@ public class Movie implements Event{
     this.des = des;
   }
 
+  /**
+   * adds a review to the movie's arraylist of reviews
+   */
   @Override
   public boolean addReview(Review review) {
 	  this.reviews.add(review);
 	  return true;
   }
 
+  /**
+   * Movie getters and setters
+   * 
+   */
   public ArrayList<Review> getReviews() {
     return reviews;
   }
@@ -137,25 +150,8 @@ public class Movie implements Event{
     return director;
   }
 
-  public void setDirector(Director director) {
-    this.director = director;
-  }
-
-  public void setDirector(String director){
-    ;
-    //TODO: Convert string to Director
-  }
-
   public Actor[] getMainCast() {
     return mainCast;
-  }
-
-  public void setMainCast(Actor[] mainCast) {
-    this.mainCast = mainCast;
-  }
-  public void setMainCast(String mainCast){
-    //TODO: Parse string, convert to cast
-    ;
   }
 
   public void setTitle(String title) {
@@ -173,7 +169,6 @@ public class Movie implements Event{
    * @return cast in a comma separated string
    */
   public String getCastString() {
-    //TODO: convert cast to String
     return "<Main cast goes here>";
   }
 
