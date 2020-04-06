@@ -1,15 +1,14 @@
-/*
- * Written by Something Creative
- * An interface for
+/**
+ * 
+ * @author Something Creative
+ * 
+ * This is the event interface
+ * The Movie, Play, and Concert classes implement this interface.
+ *
  */
-
-
-import java.time.LocalDateTime;
-
 public interface Event {
   public boolean addReview(Review review);
   public String getType();
-  public String toString();
   public String getTitle();
   public String getDes();
   public String getRating();

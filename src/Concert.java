@@ -2,14 +2,12 @@
  * This is the Concert Class
  * It implements the Event interface
  */
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Concert implements Event{
 
   private String title;
   private String des;
-  private LocalDateTime showtime;
   private ArrayList<Review> reviews;
   private String rating;
   private String band;
@@ -162,7 +160,6 @@ public class Concert implements Event{
    * @return cast in a comma separated string
    */
   public String getCastString() {
-    //TODO: convert cast to String
     return "<Main cast goes here>";
   }
 }
