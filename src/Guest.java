@@ -59,6 +59,7 @@ public class Guest implements User {
 				for(int j = i; j < i + number; j++) {
 					System.out.println("What seat would you like for ticket " + ticketNum + "?");
 					tickets[j] = event.getSeatingChart().seatStatus(event, time);
+					ticketNum++;
 				}
 				return;
 			}

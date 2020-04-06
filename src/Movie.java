@@ -14,8 +14,6 @@ public class Movie implements Event{
   private String des;
   private ArrayList<Review> reviews;
   private String rating;
-  private Director director;
-  private Actor[] mainCast;
   private String[] times;
   private seatingChart seatingChart;
   private String cast;
@@ -144,14 +142,6 @@ public class Movie implements Event{
 
   public void setRating(String rating) {
     this.rating = rating;
-  }
-
-  public Director getDirector() {
-    return director;
-  }
-
-  public Actor[] getMainCast() {
-    return mainCast;
   }
 
   public void setTitle(String title) {

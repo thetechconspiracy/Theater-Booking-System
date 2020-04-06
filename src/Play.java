@@ -12,9 +12,6 @@ public class Play implements Event{
   private String des;
   private ArrayList<Review> reviews;
   private String rating;
-
-  private Director playwright;
-  private Actor[] cast;
   
   private String[] times;
   private String[] Cast;
@@ -145,14 +142,6 @@ public class Play implements Event{
 
   public void setRating(String rating) {
     this.rating = rating;
-  }
-
-  public Director getPlaywright() {
-    return playwright;
-  }
-
-  public Actor[] getCast() {
-    return cast;
   }
 
   /**

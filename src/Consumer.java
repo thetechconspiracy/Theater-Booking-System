@@ -93,10 +93,12 @@ public class Consumer implements User {
 				for(int j = i; j < i + number; j++) {
 					System.out.println("What seat would you like for ticket " + ticketNum + "?");
 					tickets[j] = event.getSeatingChart().seatStatus(event, time);
+					ticketNum++;
 				}
+				System.out.println("Tickets have been purchased");
+				return;
 			}
 		}
-		System.out.println("Tickets have been purchased");
 	}
 	
 	/**
