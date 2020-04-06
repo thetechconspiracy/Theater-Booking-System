@@ -1,11 +1,11 @@
 /**
  * 
- * @author Brian Remer
- * This is the ticket class to keep track of the date for an event
+ * @author Something Creative
+
+ * This is the ticket class to keep track of the information for the user's event
  *
  */
 import java.io.*;
-import java.time.*;
 import java.util.*;
 
 public class Ticket {
@@ -20,20 +20,24 @@ public class Ticket {
 		this.row = (row + 1);
 		this.seat = (seat + 1);
 	}
-	public void setEvent(Event event) {
-		
-		this.event = event;
-		
-	}
 	
 	
-	
+	/**
+	 * getters and setters for ticket
+	 * 
+	 */
 	public Event getEvent() {
 		return this.event;
+	}
+	public void setEvent(Event event) {
+		this.event = event;
 	}
 	
 	public String getTime() {
 		return this.time;
+	}
+	public void setTime(String time) {
+		this.time = time;
 	}
 	
 	/**
@@ -58,6 +62,9 @@ public class Ticket {
 		
 	}
 	
+	/**
+	 * prints out the information for the ticket for viewing
+	 */
 	public void viewTicket() {
 		System.out.println("**************************************");
 		System.out.println(this.event.getTitle());
