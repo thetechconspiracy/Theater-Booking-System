@@ -1,6 +1,7 @@
-/*
+/**
  * Written by Something Creative
- * Description
+ * 
+ * This is the MovieTheater class. It implements Venue
  */
 
 import java.util.ArrayList;
@@ -17,6 +18,16 @@ public class MovieTheater implements Venue {
 
   private long childID;
 
+  /**
+   * 
+   * @param name
+   * @param address
+   * @param restaurants
+   * @param child
+   * @param location
+   * 
+   * constructor for the MovieTheater
+   */
   public MovieTheater(String name, String address, String restaurants, long child, long location){
     this.name = name;
     this.address = address;
@@ -30,6 +41,12 @@ public class MovieTheater implements Venue {
     this.events = new ArrayList<>();
   }
 
+  /**
+   * 
+   * @param theater
+   * @return
+   * Adds a theater to the array list of theaters
+   */
   public boolean addTheater(Theater theater){
     if(theater == null)
       return false;

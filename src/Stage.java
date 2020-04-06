@@ -1,6 +1,7 @@
-/*
+/**
  * Written by Something Creative
- * Description
+ * 
+ * This is the Stage class. It implements Venue
  */
 
 import java.util.ArrayList;
@@ -13,6 +14,15 @@ public class Stage implements Venue{
   private String name;
   private long location;
 
+  /**
+   * 
+   * @param name
+   * @param address
+   * @param restaurants
+   * @param location
+   * 
+   * constructor for Stage
+   */
   public Stage(String name, String address, String restaurants, long location){
     this.name = name;
     this.address = address;

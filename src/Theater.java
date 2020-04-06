@@ -1,8 +1,8 @@
-/*
+/**
  * Written by Something Creative
- * Description
+ * 
+ * This is the Theater class. It holds events. It also implements Venue
  */
-
 import java.util.ArrayList;
 
 public class Theater implements Venue {
@@ -29,6 +29,21 @@ public class Theater implements Venue {
     restaurants = "";
     parent = -1;
   }
+  
+  /**
+   * 
+   * @param name
+   * @param address
+   * @param seating
+   * @param restaurants
+   * @param tier2
+   * @param tier3
+   * @param tier4
+   * @param tier5
+   * @param location
+   * 
+   * Theater constructor
+   */
   public Theater(String name, String address, String seating, String restaurants, String tier2, String tier3, String tier4, String tier5, long location){
     //No validation necessary, these are either Strings designed to be printed or pre-verified data structures
     this.name = name;
@@ -73,12 +88,19 @@ public class Theater implements Venue {
 	  this.events = events;
   }
   
+  /**
+   * prints the events stored in the theater
+   */
   public void printEvents() {
 	  for(int i = 0; i < events.size(); i++) {
 		  System.out.print("" + (i+1) + ": ");
 		  events.get(i).printEvent();
 	  }
   }
+  
+  /**
+   * prints the number of the event and the title of each event
+   */
   public void printNumAndTitleOnly() {
 	  for(int i = 0; i < events.size(); i++) {
 		  System.out.print("" + (i+1) + ": ");
@@ -86,10 +108,23 @@ public class Theater implements Venue {
 	  }
   }
   
+  /**
+   * 
+   * @param i
+   * @return
+   * returns an event at a certain location in the array list
+   */
   public Event getEvent(int i) {
 	  return this.events.get(i);
   }
 
+  /**
+   * 
+   * @param seating
+   * @return
+   * 
+   * converts the array of seats into a string
+   */
   private Seat[][] stringToSeats(String seating){
     Seat[][] seats;
     //Get dimensions
