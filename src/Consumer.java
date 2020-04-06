@@ -9,7 +9,6 @@ import java.util.*;
 public class Consumer implements User {
 
 	private String name;
-	private int priority;
 	private String userName;
 	private String password;
 	private Ticket[] tickets;

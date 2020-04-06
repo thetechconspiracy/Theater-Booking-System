@@ -11,7 +11,6 @@ import java.util.*;
 
 public class Manager implements User {
 	private String name;
-	private int priority;
 	private String userName;
 	private String password;
 	

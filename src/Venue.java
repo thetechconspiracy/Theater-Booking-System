@@ -1,6 +1,6 @@
-/*
+/**
  * Written by Something Creative
- * An interface for
+ * This interface is to be implemented by the Theater class
  */
 
 import java.util.ArrayList;
