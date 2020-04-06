@@ -1,8 +1,7 @@
-/*
- * Written by Something Creative
- * Description
+/**
+ * This is the Concert Class
+ * It implements the Event interface
  */
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -17,6 +16,15 @@ public class Concert implements Event{
   private String[] times;
   private seatingChart seatingChart;
 
+  /**
+   * 
+   * @param title
+   * @param des
+   * @param rating
+   * @param band
+   * 
+   * This is the Concert constructor for use by loading the JSON database
+   */
   public Concert(String title, String des, String rating, String band){//Intended for use with LoadEventDatabase only
     this.title = title;
     this.des = des;
@@ -27,6 +35,17 @@ public class Concert implements Event{
     this.seatingChart = new seatingChart(10, 10);
   }
   
+  /**
+   * 
+   * @param title
+   * @param des
+   * @param rating
+   * @param band
+   * @param times
+   * @param seatingChart
+   * 
+   * This is the Concert constructor that the manager uses when they are adding an event to a theater
+   */
   public Concert(String title, String des, String rating, String band, String[] times, seatingChart seatingChart){//Intended for use with LoadEventDatabase only
 	    this.title = title;
 	    this.des = des;
@@ -37,6 +56,9 @@ public class Concert implements Event{
 	    this.seatingChart = seatingChart;
 	  }
   
+  /**
+   * this is the method for printing out the information for the concert
+   */
   public void printEvent() {
 	  System.out.println("" + this.title + "	" + this.rating);
 	  System.out.println("" + this.des);
@@ -45,6 +67,16 @@ public class Concert implements Event{
 	  }
 	  System.out.println();
 	  System.out.println();
+  }
+  
+  /**
+   * method that prints out reviews for the movie
+   */
+  public void printReviews() {
+	  for(int i = 0; i < reviews.size(); i++) {
+		  reviews.get(i).printReview();
+	  }
+	  System.out.println("No more reviews.");
   }
   
   /**
@@ -63,10 +95,10 @@ public class Concert implements Event{
   }
   
 
-  public String toString(){
-    return title + des + rating;
-  }
-
+  /**
+   * 
+   * These methods are getters and setters for the class
+   */
   public String getBand() {
     return band;
   }
@@ -91,35 +123,31 @@ public class Concert implements Event{
   public void setDes(String des) {
     this.des = des;
   }
+  
+  public ArrayList<Review> getReviews() {
+	    return reviews;
+	  }
 
-  public LocalDateTime getShowtime() {
-    return showtime;
+  public void setReviews(ArrayList<Review> reviews) {
+	  this.reviews = reviews;
   }
 
+  public String getRating() {
+	  return rating;
+  }
+
+  public void setRating(String rating) {
+	  this.rating = rating;
+  }
+
+
+  /**
+   * This is the add review method which is called when someone adds a review to a concert
+   */
   @Override
   public boolean addReview(Review review) {
 	this.reviews.add(review);
     return true;
-  }
-
-  public void setShowtime(LocalDateTime showtime) {
-    this.showtime = showtime;
-  }
-
-  public ArrayList<Review> getReviews() {
-    return reviews;
-  }
-
-  public void setReviews(ArrayList<Review> reviews) {
-    this.reviews = reviews;
-  }
-
-  public String getRating() {
-    return rating;
-  }
-
-  public void setRating(String rating) {
-    this.rating = rating;
   }
 
 

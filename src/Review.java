@@ -36,6 +36,13 @@ public class Review {
 
     return review;
   }
+  
+  public void printReview() {
+	  String[] review = this.getReview();
+	  System.out.println(review[0]);
+	  System.out.println(review[1]);
+	  System.out.println("" + review[2] + "/5 Stars");
+  }
 
   /**
    * Returns the rating of the review

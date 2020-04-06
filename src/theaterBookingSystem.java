@@ -163,7 +163,7 @@ public class theaterBookingSystem {
 		System.out.println("Welcome to the Consumer Screen");
 		while(cont) {
 			System.out.println("What would you like to do?\n1: View Available Events\n2: Purchase a Ticket"
-					+ "\n3: Write a Review\n4: View Tickets\n5: Print Tickets\n9: Logout");
+					+ "\n3: Write a Review\n4: View Tickets\n5: Print Tickets\n6: View Movie Reviews\n9: Logout");
 			int ans = keyboard.nextInt();
 			keyboard.nextLine();
 			switch(ans) {
@@ -183,6 +183,9 @@ public class theaterBookingSystem {
 				break;
 			case 5:
 				consumer.printTicket();
+				break;
+			case 6:
+				theater.getEvent(pickMovie(theater)).printReviews();
 				break;
 			case 9:
 				cont = false;

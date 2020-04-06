@@ -71,6 +71,16 @@ public class Movie implements Event{
   }
   
   /**
+   * method that prints out reviews for the movie
+   */
+  public void printReviews() {
+	  for(int i = 0; i < reviews.size(); i++) {
+		  reviews.get(i).printReview();
+	  }
+	  System.out.println("No more reviews.");
+  }
+  
+  /**
    * returns the array of showtimes
    */
   public String[] getTimes() {
@@ -99,10 +109,6 @@ public class Movie implements Event{
 
   public void setDes(String des) {
     this.des = des;
-  }
-
-  public LocalDateTime getShowtime() {
-    return null;
   }
 
   @Override
