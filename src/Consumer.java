@@ -1,10 +1,9 @@
 import java.util.*;
+
 /**
- * 
- * @author Brian Remer
  * This is the consumer class. It has the ability to store tickets and make purchases.
- *
  */
+
 public class Consumer implements User {
 
 	private String name;
@@ -33,17 +32,18 @@ public class Consumer implements User {
 	 */
 	public void printTicket() {
 		Scanner keyboard = new Scanner(System.in);
-		
-		for(Ticket t : this.tickets) {
-			if(t != null) {
-				System.out.println(""+t.getEvent().getTitle());
-				System.out.println(""+t.getTime());
+		for (Ticket t : this.tickets) {
+			if (t != null) {
+				System.out.println("" + t.getEvent().getTitle());
+				System.out.println("" + t.getTime());
 				System.out.println("Would you like to print this ticket? Y/N");
 				String answer = keyboard.nextLine();
-				if(answer.equals("Y")) {
+				if(answer.equalsIgnoreCase("y")) {
 					t.printTicket();
 				}
+				else {}
 			}
+			else {}
 		}
 	}
 	
@@ -58,12 +58,18 @@ public class Consumer implements User {
 		String title = keyboard.nextLine();
 		System.out.println("Enter a comment for your review:");
 		String comment = keyboard.nextLine();
-		System.out.println("Enter a number of stars out of 5:");
-		int rating = keyboard.nextInt();
-		
+		int rating;
+		while (true) {
+			System.out.println("Enter a rating between 0 and 5 stars:");
+			rating = keyboard.nextInt();
+			if (rating < 0 || rating > 5) {
+				System.out.println("Invalid rating. Please enter an integer between 0 and 5, inclusive.");
+			}
+			else {
+				break;
+			}
+		}
 		event.addReview(new Review(title, comment, rating));
-		
-		
 	}
 	
 	/**
@@ -89,8 +95,9 @@ public class Consumer implements User {
 					System.out.println("What seat would you like for ticket " + ticketNum + "?");
 					tickets[j] = event.getSeatingChart().seatStatus(event, time);
 				}
-				return;
+				return; /* won't this immediately break out of the method without finishing the outer for loop? */
 			}
+			else {}
 		}
 		System.out.println("Tickets have been purchased");
 	}
