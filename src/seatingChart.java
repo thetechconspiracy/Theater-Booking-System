@@ -1,3 +1,9 @@
+/**
+ * Written by Something Creative
+ * 
+ * This is the seatingChart class which keeps tracks of tickets and seats for a theater
+ */
+
 import java.util.*;
 
 public class seatingChart {
