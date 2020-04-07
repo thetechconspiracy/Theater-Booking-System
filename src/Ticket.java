@@ -43,9 +43,10 @@ public class Ticket {
 	/**
 	 * prints the ticket to a text file
 	 */
-	public void printTicket() {
+	public void printTicket(int i) {
 		try {
-			FileWriter filewriter = new FileWriter("C:/temp/ticket.txt");
+			String name = String.valueOf(i);
+			FileWriter filewriter = new FileWriter("C:/Downloads/tickets/ticket" + name + ".txt");
 			PrintWriter printwriter = new PrintWriter(filewriter);
 			printwriter.println("**************************************");
 			printwriter.println(this.event.getTitle());

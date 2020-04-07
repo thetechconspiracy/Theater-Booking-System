@@ -23,7 +23,7 @@ public class Guest implements User {
 	 */
 	public void printTicket() {
 		Scanner keyboard = new Scanner(System.in);
-		
+		int i = 1;
 		for(Ticket t : this.tickets) {
 			if(t != null) {
 				System.out.println(""+t.getEvent().getTitle());
@@ -31,8 +31,9 @@ public class Guest implements User {
 				System.out.println("Would you like to print this ticket? Y/N");
 				String answer = keyboard.nextLine();
 				if(answer.equals("Y")) {
-					t.printTicket();
+					t.printTicket(i);
 				}
+				i++;
 			}
 		}
 	}
