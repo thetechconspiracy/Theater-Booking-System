@@ -47,7 +47,9 @@ public class Manager implements User {
 			System.out.println("Enter the movie's rating: ");
 			String movieRating = keyboard.nextLine();
 			String[] mShowTimes = showTimes();
-			seatingChart seatingChart = setSeatingChart();
+			int x = rows();
+			int y = seats();
+			seatingChart seatingChart = setSeatingChart(x, y);
 			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, mShowTimes, seatingChart));
 			break;
 		case 2:
@@ -61,7 +63,9 @@ public class Manager implements User {
 			String playwright = keyboard.nextLine();
 			String[] castMembers = cast();
 			String[] showTimes = showTimes();
-			seatingChart pSeatingChart = setSeatingChart();
+			int z = rows();
+			int a = seats();
+			seatingChart pSeatingChart = setSeatingChart(z, a);
 			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes, playwright, castMembers, pSeatingChart));
 			break;
 		case 3:
@@ -74,7 +78,9 @@ public class Manager implements User {
 			System.out.println("Enter the name of the band: ");
 			String band = keyboard.nextLine();
 			String[] cShowTimes = showTimes();
-			seatingChart cSeatingChart = setSeatingChart();
+			int b = rows();
+			int c = seats();
+			seatingChart cSeatingChart = setSeatingChart(b, c);
 			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, cShowTimes, cSeatingChart));
 			break;
 		default:
@@ -106,13 +112,28 @@ public class Manager implements User {
 	/**
 	 * creates a seating chart to add to an event
 	 */
-	private seatingChart setSeatingChart() {
+	public seatingChart setSeatingChart(int x, int y) {
+		return new seatingChart(x, y);
+	}
+	
+	/**
+	 * returns the number of seats per row for an event
+	 */
+	private int seats() {
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("How many rows of seats?");
-		int rows = keyboard.nextInt();
 		System.out.println("How man seats per row?");
 		int seats = keyboard.nextInt();
-		return new seatingChart(rows, seats);
+		return seats;
+	}
+	
+	/**
+	 * gets the number of rows for an event
+	 */
+	private int rows() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("How many rows?");
+		int rows = keyboard.nextInt();
+		return rows;
 	}
 	
 	/**
@@ -165,6 +186,7 @@ public class Manager implements User {
 	public String getPassword() {
 		return this.password;
 	}
+	
 	
 	
 

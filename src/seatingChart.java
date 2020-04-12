@@ -89,6 +89,20 @@ public class seatingChart {
 		return true;
 	}
 	
+	/**
+	 * returns the number of rows
+	 */
+	public int getRows() {
+		return this.seats.length;
+	}
+	
+	/**
+	 * return the number of seats
+	 */
+	public int getSeats() {
+		return this.seats[0].length;
+	}
+	
 	
 
 }
