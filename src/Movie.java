@@ -15,7 +15,7 @@ public class Movie implements Event{
   private ArrayList<Review> reviews;
   private String rating;
   private String[] times;
-  private seatingChart seatingChart;
+  private SeatingChart seatingChart;
   private String cast;
   private String Director;
   
@@ -35,7 +35,7 @@ public class Movie implements Event{
     this.des = des;
     this.rating = rating;
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
-    this.seatingChart = new seatingChart(10, 10);
+    this.seatingChart = new SeatingChart(10, 10);
     this.reviews = new ArrayList<Review>();
     this.cast = cast;
     this.Director = director;
@@ -48,7 +48,7 @@ public class Movie implements Event{
    * @param rating
    * This method is for a manager adding a movie to the venue
    */
-  public Movie(String title, String des, String rating, String[] times, seatingChart seatingChart) {
+  public Movie(String title, String des, String rating, String[] times, SeatingChart seatingChart) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
@@ -99,7 +99,7 @@ public class Movie implements Event{
    * 
    * @return returns this event's seating chart
    */
-  public seatingChart getSeatingChart() {
+  public SeatingChart getSeatingChart() {
 	  return this.seatingChart;
   }
 

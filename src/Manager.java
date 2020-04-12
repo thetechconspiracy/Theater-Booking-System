@@ -49,7 +49,7 @@ public class Manager implements User {
 			String[] mShowTimes = showTimes();
 			int x = rows();
 			int y = seats();
-			seatingChart seatingChart = setSeatingChart(x, y);
+			SeatingChart seatingChart = setSeatingChart(x, y);
 			theater.addEvent(new Movie(movieTitle, movieDes, movieRating, mShowTimes, seatingChart));
 			break;
 		case 2:
@@ -65,7 +65,7 @@ public class Manager implements User {
 			String[] showTimes = showTimes();
 			int z = rows();
 			int a = seats();
-			seatingChart pSeatingChart = setSeatingChart(z, a);
+			SeatingChart pSeatingChart = setSeatingChart(z, a);
 			theater.addEvent(new Play(playTitle, playDes, playRating, showTimes, playwright, castMembers, pSeatingChart));
 			break;
 		case 3:
@@ -80,7 +80,7 @@ public class Manager implements User {
 			String[] cShowTimes = showTimes();
 			int b = rows();
 			int c = seats();
-			seatingChart cSeatingChart = setSeatingChart(b, c);
+			SeatingChart cSeatingChart = setSeatingChart(b, c);
 			theater.addEvent(new Concert(concertTitle, concertDes, concertRating, band, cShowTimes, cSeatingChart));
 			break;
 		default:
@@ -112,8 +112,8 @@ public class Manager implements User {
 	/**
 	 * creates a seating chart to add to an event
 	 */
-	public seatingChart setSeatingChart(int x, int y) {
-		return new seatingChart(x, y);
+	public SeatingChart setSeatingChart(int x, int y) {
+		return new SeatingChart(x, y);
 	}
 	
 	/**

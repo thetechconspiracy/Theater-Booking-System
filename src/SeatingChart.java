@@ -6,7 +6,7 @@
 
 import java.util.*;
 
-public class seatingChart {
+public class SeatingChart {
 	
 	private String[][] seats;
 	
@@ -16,7 +16,7 @@ public class seatingChart {
 	 * @param y, number of columns
 	 * constructor for the seating chart
 	 */
-	public seatingChart(int x, int y) {
+	public SeatingChart(int x, int y) {
 		this.seats = new String[x][y];
 		init();
 	}

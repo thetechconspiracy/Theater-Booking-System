@@ -15,6 +15,6 @@ public interface Event {
   public String getCastString();
   public void printEvent();
   public String[] getTimes();
-  public seatingChart getSeatingChart();
+  public SeatingChart getSeatingChart();
   public void printReviews();
 }

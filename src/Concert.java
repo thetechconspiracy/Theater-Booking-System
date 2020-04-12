@@ -2,9 +2,10 @@
  * This is the Concert Class
  * It implements the Event interface
  */
+
 import java.util.ArrayList;
 
-public class Concert implements Event{
+public class Concert implements Event {
 
   private String title;
   private String des;
@@ -12,7 +13,7 @@ public class Concert implements Event{
   private String rating;
   private String band;
   private String[] times;
-  private seatingChart seatingChart;
+  private SeatingChart seatingChart;
 
   /**
    * 
@@ -23,14 +24,14 @@ public class Concert implements Event{
    * 
    * This is the Concert constructor for use by loading the JSON database
    */
-  public Concert(String title, String des, String rating, String band){//Intended for use with LoadEventDatabase only
+  public Concert(String title, String des, String rating, String band) { /* intended for use with LoadEventDatabase only */
     this.title = title;
     this.des = des;
     this.rating = rating;
     this.band = band;
     this.times = new String[] {"4:00", "6:00", "8:00", "10:00"};
     this.reviews = new ArrayList<Review>();
-    this.seatingChart = new seatingChart(10, 10);
+    this.seatingChart = new SeatingChart(10, 10);
   }
   
   /**
@@ -44,7 +45,7 @@ public class Concert implements Event{
    * 
    * This is the Concert constructor that the manager uses when they are adding an event to a theater
    */
-  public Concert(String title, String des, String rating, String band, String[] times, seatingChart seatingChart){//Intended for use with LoadEventDatabase only
+  public Concert(String title, String des, String rating, String band, String[] times, SeatingChart seatingChart){//Intended for use with LoadEventDatabase only
 	    this.title = title;
 	    this.des = des;
 	    this.rating = rating;
@@ -88,7 +89,7 @@ public class Concert implements Event{
    * 
    * @return returns this event's seating chart
    */
-  public seatingChart getSeatingChart() {
+  public SeatingChart getSeatingChart() {
 	  return this.seatingChart;
   }
   

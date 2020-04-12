@@ -30,14 +30,14 @@ class ManagerTest {
 	@Test
 	public void testSeatingChartRows() {
 		Manager manager = new Manager("Bob", "bbob", "12345");
-		seatingChart seatingChart = manager.setSeatingChart(3, 3);
+		SeatingChart seatingChart = manager.setSeatingChart(3, 3);
 		assertEquals(seatingChart.getRows(), 3);
 	}
 	
 	@Test
 	public void testSeatingChartColumns() {
 		Manager manager = new Manager("Bob", "bbob", "12345");
-		seatingChart seatingChart = manager.setSeatingChart(3, 3);
+		SeatingChart seatingChart = manager.setSeatingChart(3, 3);
 		assertEquals(seatingChart.getSeats(), 3);
 	}
 
