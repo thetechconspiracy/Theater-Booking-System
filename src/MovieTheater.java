@@ -142,5 +142,11 @@ public class MovieTheater implements Venue {
   public ArrayList<Theater> getTheaters(){
     return this.theaters;
   }
-
+  
+  /**
+   * returns the name of a theater
+   */
+  public String getName() {
+	  return this.name;
+  }
 }

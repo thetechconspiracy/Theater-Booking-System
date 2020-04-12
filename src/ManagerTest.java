@@ -4,10 +4,6 @@ import org.junit.jupiter.api.Test;
 
 class ManagerTest {
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	public void testName() {
