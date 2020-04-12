@@ -16,7 +16,7 @@ public class Play implements Event{
   private String[] times;
   private String[] Cast;
   private String playWright;
-  private seatingChart seatingChart;
+  private SeatingChart seatingChart;
 
 
   /**
@@ -38,7 +38,7 @@ public class Play implements Event{
     this.Cast = new String[1];
     this.Cast[0] = "";
     this.reviews = new ArrayList<Review>();
-    this.seatingChart = new seatingChart(10,10);
+    this.seatingChart = new SeatingChart(10,10);
   }
   
   /**
@@ -48,7 +48,7 @@ public class Play implements Event{
    * @param rating
    * this method is for a manager adding a play
    */
-  public Play(String title, String des, String rating, String[] times, String playwright, String[] cast, seatingChart seatingChart) {
+  public Play(String title, String des, String rating, String[] times, String playwright, String[] cast, SeatingChart seatingChart) {
 	  this.title = title;
 	  this.des = des;
 	  this.rating = rating;
@@ -97,7 +97,7 @@ public class Play implements Event{
    * 
    * Getters and setters for the Concert class
    */
-  public seatingChart getSeatingChart() {
+  public SeatingChart getSeatingChart() {
 	  return this.seatingChart;
   }
 

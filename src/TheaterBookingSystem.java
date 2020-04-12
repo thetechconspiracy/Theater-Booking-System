@@ -1,21 +1,17 @@
-import java.util.*;
 /**
- * 
- * @author Something Creative
- * 
  * This is the theaterBookingSystem class.
  * This is what main calls to execute the program
- *
  */
-public class theaterBookingSystem {
+
+import java.util.*;
+
+public class TheaterBookingSystem {
 	
 	public void run() {
 		ArrayList<Event> events = LoadEventDatabase.loadDatabase();
 	    Theater theater = new Theater("Test 1", events);
 	    User[] users = userArray();
 	    login(users, theater);
-	    
-		
 	}
 	
 	/**
@@ -128,8 +124,6 @@ public class theaterBookingSystem {
 				break;
 			}
 		}
-		
-		
 	}
 	
 	/**
@@ -232,6 +226,3 @@ public class theaterBookingSystem {
 		}
 	}
 }
-
-	
-
