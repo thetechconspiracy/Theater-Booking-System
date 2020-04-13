@@ -90,13 +90,12 @@ public class LoadVenueDatabase {
 
 
 
-
+      reader.close();
       return venues;
 
     }catch(Exception e){
-      e.printStackTrace();
+      System.err.println("File \"database/Venue.json\" not found!");
+      return null;
     }
-
-    return venues;
   }
 }

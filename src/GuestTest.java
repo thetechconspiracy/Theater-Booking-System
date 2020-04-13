@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GuestTest {
   //Most of the Guest class is simply UI elements and interactions
-  
+
   @Test
   public void testGetType(){
     Guest guest = new Guest();

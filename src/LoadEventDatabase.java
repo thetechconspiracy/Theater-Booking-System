@@ -56,8 +56,10 @@ public class LoadEventDatabase {
             throw new InvalidObjectException("Invalid type");
         }
       }
+      reader.close();
     }catch(Exception e){
-      e.printStackTrace();
+      System.err.println("File \"database/Events.json\" not found!");
+      return null;
     }
     return events;
   }
