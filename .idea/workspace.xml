@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10d3af81-693c-4226-af23-4af8a16cb835" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/files" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/theater-booking-system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/theater-booking-system/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/theater-booking-system/Theater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/theater-booking-system/Theater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurant.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +49,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -109,10 +108,11 @@
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
     <state x="916" y="288" width="1440" height="1016" key="CommitChangelistDialog2/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585686317661" />
-    <state x="1060" y="447" key="FileChooserDialogImpl" timestamp="1585149331618">
+    <state x="1060" y="447" key="FileChooserDialogImpl" timestamp="1586357357500">
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
     <state x="1060" y="447" key="FileChooserDialogImpl/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585149331618" />
+    <state x="1060" y="447" key="FileChooserDialogImpl/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586357357500" />
     <state width="2191" height="489" key="GridCell.Tab.0.bottom" timestamp="1586198914227">
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
@@ -149,18 +149,19 @@
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
     <state width="804" height="339" key="GridCell.Tab.1.right/0.0.1920.1019@0.0.1920.1019" timestamp="1585947742544" />
-    <state x="783" y="335" key="SettingsEditor" timestamp="1585147362621">
+    <state x="783" y="335" key="SettingsEditor" timestamp="1586206377405">
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
-    <state x="783" y="335" key="SettingsEditor/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585147362621" />
+    <state x="783" y="335" key="SettingsEditor/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586206377405" />
     <state x="944" y="362" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585686555536">
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
     <state x="944" y="362" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585686555536" />
-    <state x="3513" y="0" width="974" height="1057" key="dock-window-1" timestamp="1586199344496">
-      <screen x="2560" y="0" width="1920" height="1019" />
+    <state x="1271" y="0" width="1299" height="1431" key="dock-window-1" timestamp="1586357282800">
+      <screen x="0" y="0" width="2560" height="1379" />
     </state>
-    <state x="3513" y="0" width="974" height="1057" key="dock-window-1/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586199344496" />
+    <state x="3513" y="0" width="974" height="1057" key="dock-window-1/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586206492889" />
+    <state x="1271" y="0" width="1299" height="1431" key="dock-window-1/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586357282800" />
     <state x="-7" y="0" width="1294" height="1026" key="dock-window-2" timestamp="1585857712540">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
@@ -175,17 +176,73 @@
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
     <state x="1010" y="465" key="extract.method.dialog/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585685557431" />
-    <state x="662" y="316" key="new project wizard" timestamp="1585686855990">
+    <state x="0" y="0" width="136" height="100" key="net.trustx.simpleuml.components.BirdViewFrame" timestamp="1586206484299">
+      <screen x="0" y="0" width="2560" height="1379" />
+    </state>
+    <state x="0" y="0" width="136" height="100" key="net.trustx.simpleuml.components.BirdViewFrame/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586206484299" />
+    <state x="662" y="316" key="new project wizard" timestamp="1586357359348">
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
     <state x="662" y="316" key="new project wizard/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585686855990" />
+    <state x="662" y="316" key="new project wizard/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586357359348" />
     <state x="936" y="325" key="run.anything.popup" timestamp="1585767247607">
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
     <state x="936" y="325" key="run.anything.popup/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585767247607" />
-    <state x="943" y="309" width="672" height="678" key="search.everywhere.popup" timestamp="1585684694177">
+    <state x="943" y="309" width="672" height="678" key="search.everywhere.popup" timestamp="1586206307577">
       <screen x="0" y="0" width="2560" height="1379" />
     </state>
-    <state x="943" y="309" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585684694177" />
+    <state x="943" y="309" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586206307577" />
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="knownFile0" value="file://$PROJECT_DIR$/../Diagram.suml" />
+      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
   </component>
 </project>
