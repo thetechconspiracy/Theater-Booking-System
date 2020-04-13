@@ -7,7 +7,7 @@ public class RunTests {
   public static void main(String[] args){
     //Seat
     SeatTest seats = new SeatTest();
-    seats.testConstructor();
+    seats.testToString();
     seats.testOccupied();
 
     //Guest

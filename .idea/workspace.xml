@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10d3af81-693c-4226-af23-4af8a16cb835" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/RunTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/theater-booking-system/LoadEventDatabaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/theater-booking-system/LoadEventDatabaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/theater-booking-system/LoadVenueDatabaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/theater-booking-system/LoadVenueDatabaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/theater-booking-system/SaveEventDatabaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/theater-booking-system/SaveEventDatabaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadEventDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadEventDatabaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadVenueDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadVenueDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Events.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/Events.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RunTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SeatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SeatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="363" />
+    <option name="myElementSize" value="226" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -162,32 +159,32 @@
     </state>
     <state x="1060" y="447" key="FileChooserDialogImpl/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1585149331618" />
     <state x="1060" y="447" key="FileChooserDialogImpl/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586357357500" />
-    <state width="1191" height="239" key="GridCell.Tab.0.bottom" timestamp="1586800246366">
+    <state width="932" height="239" key="GridCell.Tab.0.bottom" timestamp="1586800676663">
       <screen x="-1920" y="185" width="1920" height="1050" />
     </state>
     <state width="1058" height="195" key="GridCell.Tab.0.bottom/0.0.1920.1019@0.0.1920.1019" timestamp="1585948379710" />
-    <state width="1191" height="239" key="GridCell.Tab.0.bottom/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800246366" />
+    <state width="932" height="239" key="GridCell.Tab.0.bottom/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800676663" />
     <state width="1292" height="489" key="GridCell.Tab.0.bottom/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586799898255" />
     <state width="2125" height="489" key="GridCell.Tab.0.bottom/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586792682298" />
-    <state width="1191" height="239" key="GridCell.Tab.0.center" timestamp="1586800246365">
+    <state width="932" height="239" key="GridCell.Tab.0.center" timestamp="1586800676663">
       <screen x="-1920" y="185" width="1920" height="1050" />
     </state>
     <state width="1058" height="195" key="GridCell.Tab.0.center/0.0.1920.1019@0.0.1920.1019" timestamp="1585948379709" />
-    <state width="1191" height="239" key="GridCell.Tab.0.center/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800246365" />
+    <state width="932" height="239" key="GridCell.Tab.0.center/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800676663" />
     <state width="1292" height="489" key="GridCell.Tab.0.center/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586799898255" />
     <state width="2125" height="489" key="GridCell.Tab.0.center/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586792682298" />
-    <state width="1191" height="239" key="GridCell.Tab.0.left" timestamp="1586800246365">
+    <state width="932" height="239" key="GridCell.Tab.0.left" timestamp="1586800676663">
       <screen x="-1920" y="185" width="1920" height="1050" />
     </state>
     <state width="1058" height="195" key="GridCell.Tab.0.left/0.0.1920.1019@0.0.1920.1019" timestamp="1585948379709" />
-    <state width="1191" height="239" key="GridCell.Tab.0.left/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800246365" />
+    <state width="932" height="239" key="GridCell.Tab.0.left/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800676663" />
     <state width="1292" height="489" key="GridCell.Tab.0.left/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586799898255" />
     <state width="2125" height="489" key="GridCell.Tab.0.left/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586792682298" />
-    <state width="1191" height="239" key="GridCell.Tab.0.right" timestamp="1586800246366">
+    <state width="932" height="239" key="GridCell.Tab.0.right" timestamp="1586800676663">
       <screen x="-1920" y="185" width="1920" height="1050" />
     </state>
     <state width="1058" height="195" key="GridCell.Tab.0.right/0.0.1920.1019@0.0.1920.1019" timestamp="1585948379709" />
-    <state width="1191" height="239" key="GridCell.Tab.0.right/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800246365" />
+    <state width="932" height="239" key="GridCell.Tab.0.right/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@-1920.185.1920.1050" timestamp="1586800676663" />
     <state width="1292" height="489" key="GridCell.Tab.0.right/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586799898255" />
     <state width="2125" height="489" key="GridCell.Tab.0.right/2560.0.1920.1019/0.0.2560.1379/-1920.185.1920.1050@0.0.2560.1379" timestamp="1586792682298" />
     <state width="804" height="339" key="GridCell.Tab.1.bottom" timestamp="1585947742544">
@@ -258,9 +255,9 @@
     <state x="943" y="309" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1019/-1920.185.1920.1050/0.0.2560.1379@0.0.2560.1379" timestamp="1586206307577" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/theater_booking_system$RunTests.ic" NAME="RunTests Coverage Results" MODIFIED="1586800246335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/theater_booking_system$RunTests.ic" NAME="RunTests Coverage Results" MODIFIED="1586800676641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/theater_booking_system$Main.ic" NAME="Main Coverage Results" MODIFIED="1586799856403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/theater_booking_system$SeatTest.ic" NAME="SeatTest Coverage Results" MODIFIED="1586799898222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/theater_booking_system$SeatTest.ic" NAME="SeatTest Coverage Results" MODIFIED="1586800576197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/theater_booking_system$SaveEventDatabaseTest.ic" NAME="SaveEventDatabaseTest Coverage Results" MODIFIED="1586799781216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">

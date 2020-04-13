@@ -7,12 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SeatTest {
   @Test
-  public void testConstructor(){
+  public void testToString(){
     Seat seat = new Seat(5);
     assertEquals("5", seat.toString());
     //Test invalid tier
     Seat seatError = new Seat(99);
     assertEquals("H", seatError.toString());
+    //Test occupied
+    Seat seatOccupied = new Seat(3);
+    assertEquals("3", seatOccupied.toString());
+    seatOccupied.setOccupied(true);
+    assertEquals("0", seatOccupied.toString());
   }
 
   @Test
