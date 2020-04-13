@@ -1,14 +1,13 @@
 /**
- * 
  * @author Something Creative
-
  * This is the ticket class to keep track of the information for the user's event
- *
  */
+
 import java.io.*;
 import java.util.*;
 
 public class Ticket {
+	
 	private Event event;
 	private String time;
 	private int row;
@@ -75,4 +74,5 @@ public class Ticket {
 		System.out.println("Row Number: " + this.row + " Seat Number: " + this.seat);
 		System.out.println("**************************************");
 	}
+	
 }
