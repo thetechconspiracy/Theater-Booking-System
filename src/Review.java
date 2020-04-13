@@ -1,11 +1,7 @@
 /**
- * 
  * @author Something Creative
- * 
  * This is the review class. It is a review for an event
- *
  */
-
 
 public class Review {
   private String title;
