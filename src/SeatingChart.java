@@ -1,6 +1,5 @@
 /**
- * Written by Something Creative
- * 
+ * @author Something Creative
  * This is the seatingChart class which keeps tracks of tickets and seats for a theater
  */
 
@@ -11,13 +10,17 @@ public class SeatingChart {
 	private String[][] seats;
 	
 	/**
-	 * 
 	 * @param x, number of rows
 	 * @param y, number of columns
 	 * constructor for the seating chart
 	 */
 	public SeatingChart(int x, int y) {
-		this.seats = new String[x][y];
+		if (x > 0 && y > 0) {
+			this.seats = new String[x][y];
+		}
+		else {
+			System.out.println("Invalid number of seats.");
+		}
 		init();
 	}
 	
@@ -51,7 +54,6 @@ public class SeatingChart {
 	}
 	
 	/**
-	 * 
 	 * @param x, row number
 	 * @param y, column number
 	 * this changes the status of a seat to unavailable
@@ -77,7 +79,6 @@ public class SeatingChart {
 	}
 	
 	/**
-	 * 
 	 * @param x, row
 	 * @param y, seat number
 	 * @return returns a boolean if the seat is already taken
@@ -102,7 +103,5 @@ public class SeatingChart {
 	public int getSeats() {
 		return this.seats[0].length;
 	}
-	
-	
 
 }

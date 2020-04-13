@@ -1,15 +1,11 @@
 /**
- * 
- * Written by Something Creative
- * 
+ * @author Something Creative
  * This is the Movie class. It implements the Event interface.
- * 
  */
-
 
 import java.util.ArrayList;
 
-public class Movie implements Event{
+public class Movie implements Event {
   private String title;
   private String des;
   private ArrayList<Review> reviews;
@@ -21,7 +17,6 @@ public class Movie implements Event{
   
 
   /**
-   * 
    * @param title
    * @param des
    * @param rating

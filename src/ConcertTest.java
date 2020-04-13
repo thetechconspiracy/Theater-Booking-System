@@ -25,7 +25,7 @@ public class ConcertTest {
 	SeatingChart seatingChart = new SeatingChart(50, 50);
 	
 	public void main(String[] args) {
-		System.out.println("testing potential worst case scenario\n-----------------------------------");
+		System.out.println("Concert test: testing potential worst case scenario\n-----------------------------------");
 		testWorstCase1();
 		System.out.println("-------------------------------------\n"
 				+ "testing another potential worst case scenario\n"
@@ -35,6 +35,7 @@ public class ConcertTest {
 				+ "testing a usual scenario\n"
 				+ "---------------------------------------");
 		testUsualCase();
+		System.out.println("Finished testing Concert.");
 	}
 	
 	public void testWorstCase1() {
