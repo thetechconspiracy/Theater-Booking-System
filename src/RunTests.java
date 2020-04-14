@@ -28,6 +28,20 @@ public class RunTests {
     //SaveEventDatabase
     SaveEventDatabaseTest SEDTest = new SaveEventDatabaseTest();
     SEDTest.testSaveDatabase();
+    
+    //MovieTheater
+    MovieTheaterTest mtTest = new MovieTheaterTest();
+    mtTest.checkAddress();
+    mtTest.checkEventArray();
+    mtTest.checkName();
+    mtTest.checkRestaurant();
+    mtTest.checkTheaterArray();
+    mtTest.checkAddEvent();
+    mtTest.checkGetReviews();
+    mtTest.checkGetType();
+    
+    //Manager
+    
 
   }
 }

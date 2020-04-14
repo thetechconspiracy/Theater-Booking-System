@@ -29,7 +29,9 @@ class MovieTheaterTest {
 		ArrayList<Event> events = new ArrayList<>();
 		Theater theater = new Theater("Theater1", events);
 		movieTheater.addTheater(theater);
-		assertEquals(events, movieTheater.getTheaters());
+		ArrayList<Theater> theaters = new ArrayList<>();
+		theaters.add(theater);
+		assertEquals(theaters, movieTheater.getTheaters());
 	}
 	
 	@Test
@@ -38,6 +40,33 @@ class MovieTheaterTest {
 		ArrayList<Event> events = new ArrayList<>();
 		movieTheater.setEvents(events);
 		assertEquals(events, movieTheater.getEvents());
+	}
+	
+	@Test
+	public void checkAddEvent() {
+		MovieTheater movieTheater = new MovieTheater("Test1", "123 Road", "Chili's", 1, 1);
+		ArrayList<Event> events = new ArrayList<>();
+		movieTheater.setEvents(events);
+		Movie movie = new Movie("Test1", "Test2", "Test3", "Test4", "Test5");
+		movieTheater.addEvent(movie);
+		events.add(movie);
+		assertEquals(events, movieTheater.getEvents());
+	}
+	
+	@Test
+	public void checkGetReviews() {
+		MovieTheater movieTheater = new MovieTheater("Test1", "123 Road", "Chili's", 1, 1);
+		ArrayList<Review> reviews = new ArrayList<>();
+		Review review = new Review("Test1", "Test2", 4);
+		movieTheater.addReview(review);
+		reviews.add(review);
+		assertEquals(reviews, movieTheater.getReviews());
+	}
+	
+	@Test
+	public void checkGetType() {
+		MovieTheater movieTheater = new MovieTheater("Test1", "123 Road", "Chili's", 1, 1);
+		assertEquals("movieTheater", movieTheater.getType());
 	}
 	
 	

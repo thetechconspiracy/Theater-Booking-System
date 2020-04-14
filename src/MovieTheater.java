@@ -48,8 +48,6 @@ public class MovieTheater implements Venue {
    * Adds a theater to the array list of theaters
    */
   public boolean addTheater(Theater theater){
-    if(theater == null)
-      return false;
     return this.theaters.add(theater);
   }
 
@@ -124,7 +122,7 @@ public class MovieTheater implements Venue {
    */
   @Override
   public void addEvent(Event event) {
-    this.events.add(event);
+	  this.events.add(event);
   }
 
   /**
