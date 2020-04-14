@@ -40,6 +40,24 @@ public class RunTests {
     mtTest.checkGetReviews();
     mtTest.checkGetType();
     
+    //Movie
+    MovieTest movieTest = new MovieTest();
+    movieTest.testDes();
+    movieTest.testRating();
+    movieTest.testTimes();
+    movieTest.testTitle();
+    
+    //Concert
+    ConcertTest concertTest = new ConcertTest();
+    concertTest.testBand();
+    concertTest.testDes();
+    concertTest.testRating();
+    concertTest.testReviews();
+    concertTest.testSeatingChart();
+    concertTest.testTimes();
+    concertTest.testTitle();
+    concertTest.testType();
+    
     //Manager
     ManagerTest managerTest = new ManagerTest();
     managerTest.testName();

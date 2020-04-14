@@ -106,32 +106,16 @@ public class Concert implements Event {
     return title;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
   public String getDes() {
     return des;
-  }
-
-  public void setDes(String des) {
-    this.des = des;
   }
   
   public ArrayList<Review> getReviews() {
 	    return reviews;
 	  }
 
-  public void setReviews(ArrayList<Review> reviews) {
-	  this.reviews = reviews;
-  }
-
   public String getRating() {
 	  return rating;
-  }
-
-  public void setRating(String rating) {
-	  this.rating = rating;
   }
 
 
