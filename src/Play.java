@@ -1,6 +1,5 @@
 /**
- * Written by Something Creative
- * 
+ * @author Something Creative
  * This is the Play class. It implements the Event interface
  */
 
@@ -18,18 +17,15 @@ public class Play implements Event{
   private String playWright;
   private SeatingChart seatingChart;
 
-
   /**
-   * 
    * @param title
    * @param des
    * @param rating
    * @param playwright
    * @param cast
-   * 
    * constructor used by the JSON file
    */
-  public Play(String title, String des, String rating, String playwright, String cast){ // Only intended for use by LoadEventDatabase
+  public Play(String title, String des, String rating, String playwright, String cast) { // Only intended for use by LoadEventDatabase
     this.title = title;
     this.des = des;
     this.rating = rating;
@@ -42,7 +38,6 @@ public class Play implements Event{
   }
   
   /**
-   * 
    * @param title
    * @param des
    * @param rating
@@ -161,4 +156,5 @@ public class Play implements Event{
   public String getPlaywrightString(){
     return "<director>";
   }
+  
 }
