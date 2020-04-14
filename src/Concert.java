@@ -102,11 +102,6 @@ public class Concert implements Event {
     return band;
   }
 
-  public void setBand(String band) {
-    this.band = band;
-  }
-
-
   public String getTitle() {
     return title;
   }

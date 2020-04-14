@@ -18,9 +18,10 @@ public class TheaterBookingSystem {
 	 * login method that is called at the beginning for the user to initiate commands
 	 * it takes in an array of users to check the logins by
 	 */
-	public void login(User[] users, Theater theater) {
+	public boolean login(User[] users, Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		boolean cont = true;
+		boolean login = false;
 		while(cont) {
 			System.out.println("Would you like to login as a:\n1: User\n2: Manager\n3: Continue as Guest\n4: Exit");
 			int ans = keyboard.nextInt();
@@ -38,6 +39,7 @@ public class TheaterBookingSystem {
 				}
 				else {
 					consumerOptions((Consumer)checkCredentials(cUserName, cPassword, users), theater);
+					login = true;
 				}
 				break;
 			case 2:
@@ -51,6 +53,7 @@ public class TheaterBookingSystem {
 				}
 				else {
 					managerOptions((Manager)checkCredentials(userName, password, users), theater);
+					login = true;
 				}
 				break;
 			case 3:
@@ -61,6 +64,7 @@ public class TheaterBookingSystem {
 				break;
 			}
 		}
+		return login;
 	}
 	
 	
@@ -104,7 +108,7 @@ public class TheaterBookingSystem {
 	 * @param theater, takes in a theater from which to call manager methods
 	 * this calls the manager options when a user logs in as a manager
 	 */
-	private void managerOptions(Manager manager, Theater theater) {
+	public boolean managerOptions(Manager manager, Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		boolean cont = true;
 		System.out.println("Welcome to the Manager Screen");
@@ -124,6 +128,7 @@ public class TheaterBookingSystem {
 				break;
 			}
 		}
+		return true;
 	}
 	
 	/**
@@ -132,7 +137,7 @@ public class TheaterBookingSystem {
 	 * @param theater, takes in a theater from which to run theater methods
 	 * this method runs when a consumer logs in
 	 */
-	public void consumerOptions(Consumer consumer, Theater theater) {
+	public boolean consumerOptions(Consumer consumer, Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		boolean cont = true;
 		System.out.println("Welcome to the Consumer Screen");
@@ -168,6 +173,7 @@ public class TheaterBookingSystem {
 				break;
 			}
 		}
+		return true;
 		
 	}
 	
@@ -192,7 +198,7 @@ public class TheaterBookingSystem {
 	 * @param theater
 	 * This is the method that runs for a guest
 	 */
-	public void guestOptions(Guest guest, Theater theater) {
+	public boolean guestOptions(Guest guest, Theater theater) {
 		System.out.println("Welcome to the Guest Screen");
 		Scanner keyboard = new Scanner(System.in);
 		boolean cont = true;
@@ -224,5 +230,6 @@ public class TheaterBookingSystem {
 				break;
 			}
 		}
+		return true;
 	}
 }

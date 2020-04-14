@@ -84,6 +84,15 @@ public class RunTests {
     playTest.testTimes();
     playTest.testTitle();
     playTest.testType();
+    
+    //Theater Booking System
+    TheaterBookingSystemTest tBSTest = new TheaterBookingSystemTest();
+    tBSTest.testUserArray();
+    tBSTest.testSuccessfulLogin();
+    tBSTest.testFailedLogin();
+    tBSTest.testConsumerOptions();
+    tBSTest.testManagerOptions();
+    tBSTest.testGuestOptions();
 
   }
 }
