@@ -53,7 +53,7 @@ public class Consumer implements User {
 	 * @param movie, movie to have a review for
 	 * this method adds a review to a movie
 	 */
-	public void rateMovie(Event event) {
+	public boolean rateMovie(Event event) {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Enter a title for your review:");
 		String title = keyboard.nextLine();
@@ -71,6 +71,7 @@ public class Consumer implements User {
 			}
 		}
 		event.addReview(new Review(title, comment, rating));
+		return true;
 	}
 	
 	/**
@@ -78,7 +79,7 @@ public class Consumer implements User {
 	 * @param event, takes in an event for ticket purchase
 	 * this method is for a consumer purchasing a ticket
 	 */
-	public void buyTicket(Event event) {
+	public boolean buyTicket(Event event) {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Which showtime would you like?");
 		for(int i = 0; i < event.getTimes().length; i++) {
@@ -98,9 +99,10 @@ public class Consumer implements User {
 					ticketNum++;
 				}
 				System.out.println("Tickets have been purchased");
-				return;
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	/**

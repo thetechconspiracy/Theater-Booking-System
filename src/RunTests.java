@@ -60,6 +60,15 @@ public class RunTests {
     reviewTest.testTitle();
     reviewTest.testRating();
     reviewTest.testContents();
+    
+    //Consumer
+    ConsumerTest consumerTest = new ConsumerTest();
+    consumerTest.testName();
+    consumerTest.testPassword();
+    consumerTest.testUserName();
+    consumerTest.testType();
+    consumerTest.testButTicket();
+    consumerTest.testRateMovie();
 
   }
 }
