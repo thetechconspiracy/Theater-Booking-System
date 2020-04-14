@@ -91,16 +91,6 @@ public class Review {
     this.rating = ratingInt;
   }
   
-  /**
-   * 
-   * @param review
-   * @return checks if the two reviews are the same
-   */
-  public boolean equals(Review review) {
-	  return this.title.equals(review.getTitle()) && 
-			  this.contents.equals(review.getContents()) &&
-			  this.rating == review.getRating();
-  }
   
   /**
    * getter

@@ -31,7 +31,7 @@ public class Manager implements User {
 	/**
 	 * adds an event to a venue
 	 */
-	public void addEvent(Theater theater) {
+	public boolean addEvent(Theater theater) {
 		Scanner keyboard = new Scanner(System.in);
 		
 		System.out.println("What would you like to add?\n1: Movie\n2: Play\n3: Concert");
@@ -89,14 +89,14 @@ public class Manager implements User {
 		System.out.println("Here are the updated events at the theater: ");
 		theater.printEvents();
 		System.out.println();
-		
+		return true;
 	}
 	
 	/**
 	 * 
 	 * @return returns an array of strings that represent show times
 	 */
-	private String[] showTimes() {
+	public String[] showTimes() {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("How many showings will there be?");
 		int times = keyboard.nextInt();
@@ -119,7 +119,7 @@ public class Manager implements User {
 	/**
 	 * returns the number of seats per row for an event
 	 */
-	private int seats() {
+	public int seats() {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("How man seats per row?");
 		int seats = keyboard.nextInt();
@@ -129,7 +129,7 @@ public class Manager implements User {
 	/**
 	 * gets the number of rows for an event
 	 */
-	private int rows() {
+	public int rows() {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("How many rows?");
 		int rows = keyboard.nextInt();
@@ -139,7 +139,7 @@ public class Manager implements User {
 	/**
 	 * method for adding members to a cast for a play
 	 */
-	private String[] cast() {
+	public String[] cast() {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("How many cast members will there be?");
 		int times = keyboard.nextInt();

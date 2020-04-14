@@ -41,7 +41,25 @@ public class RunTests {
     mtTest.checkGetType();
     
     //Manager
+    ManagerTest managerTest = new ManagerTest();
+    managerTest.testName();
+    managerTest.testPassword();
+    managerTest.testSeatingChartColumns();
+    managerTest.testSeatingChartRows();
+    managerTest.testUserName();
+    managerTest.testType();
+    managerTest.testShowTimes();
+    managerTest.testColumns();
+    managerTest.testRows();
+    managerTest.testCast();
+    managerTest.testAddEvent();
     
+    //Reviews
+    ReviewTest reviewTest = new ReviewTest();
+    reviewTest.testSetReview();
+    reviewTest.testTitle();
+    reviewTest.testRating();
+    reviewTest.testContents();
 
   }
 }
