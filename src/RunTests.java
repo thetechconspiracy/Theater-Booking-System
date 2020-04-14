@@ -69,6 +69,11 @@ public class RunTests {
     consumerTest.testType();
     consumerTest.testButTicket();
     consumerTest.testRateMovie();
+    
+    //Ticket
+    TicketTest ticketTest = new TicketTest();
+    ticketTest.testEvent();
+    ticketTest.testTime();
 
   }
 }

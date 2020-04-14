@@ -127,21 +127,10 @@ public class Movie implements Event {
     return reviews;
   }
 
-  public void setReviews(ArrayList<Review> reviews) {
-    this.reviews = reviews;
-  }
-
   public String getRating() {
     return rating;
   }
 
-  public void setRating(String rating) {
-    this.rating = rating;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
 
   /**
    * Used for converting to JSON
