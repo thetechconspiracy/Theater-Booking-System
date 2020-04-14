@@ -74,6 +74,16 @@ public class RunTests {
     TicketTest ticketTest = new TicketTest();
     ticketTest.testEvent();
     ticketTest.testTime();
+    
+    //Play
+    PlayTest playTest = new PlayTest();
+    playTest.testDesc();
+    playTest.testRating();
+    playTest.testReviews();
+    playTest.testSeatingChart();
+    playTest.testTimes();
+    playTest.testTitle();
+    playTest.testType();
 
   }
 }
